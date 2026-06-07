@@ -28,4 +28,1467 @@ synced_files = [
     ".config/zed",
     ".config/zellij",
 ]
-packages = []
+
+[[profiles.packages]]
+name = "zellij"
+manager = "pacman"
+package_name = "zellij"
+binary_name = "zellij"
+
+[[profiles.packages]]
+name = "hyprlock"
+manager = "pacman"
+package_name = "hyprlock"
+binary_name = "hyprlock"
+
+[[profiles.packages]]
+name = "pavucontrol"
+manager = "pacman"
+package_name = "pavucontrol"
+binary_name = "pavucontrol"
+
+[[profiles.packages]]
+name = "nilfs-utils"
+manager = "pacman"
+package_name = "nilfs-utils"
+binary_name = "nilfs-utils"
+
+[[profiles.packages]]
+name = "egl-wayland"
+manager = "pacman"
+package_name = "egl-wayland"
+binary_name = "egl-wayland"
+
+[[profiles.packages]]
+name = "cameractrls"
+manager = "pacman"
+package_name = "cameractrls"
+binary_name = "cameractrls"
+
+[[profiles.packages]]
+name = "diffutils"
+manager = "pacman"
+package_name = "diffutils"
+binary_name = "diffutils"
+
+[[profiles.packages]]
+name = "ufw-extras"
+manager = "pacman"
+package_name = "ufw-extras"
+binary_name = "ufw-extras"
+
+[[profiles.packages]]
+name = "udiskie"
+manager = "pacman"
+package_name = "udiskie"
+binary_name = "udiskie"
+
+[[profiles.packages]]
+name = "playerctl"
+manager = "pacman"
+package_name = "playerctl"
+binary_name = "playerctl"
+
+[[profiles.packages]]
+name = "amd-ucode"
+manager = "pacman"
+package_name = "amd-ucode"
+binary_name = "amd-ucode"
+
+[[profiles.packages]]
+name = "boilr"
+manager = "pacman"
+package_name = "boilr"
+binary_name = "boilr"
+
+[[profiles.packages]]
+name = "noto-fonts"
+manager = "pacman"
+package_name = "noto-fonts"
+binary_name = "noto-fonts"
+
+[[profiles.packages]]
+name = "xdg-user-dirs"
+manager = "pacman"
+package_name = "xdg-user-dirs"
+binary_name = "xdg-user-dirs"
+
+[[profiles.packages]]
+name = "vlc-plugins-all"
+manager = "pacman"
+package_name = "vlc-plugins-all"
+binary_name = "vlc-plugins-all"
+
+[[profiles.packages]]
+name = "paru"
+manager = "pacman"
+package_name = "paru"
+binary_name = "paru"
+
+[[profiles.packages]]
+name = "ethtool"
+manager = "pacman"
+package_name = "ethtool"
+binary_name = "ethtool"
+
+[[profiles.packages]]
+name = "hwinfo"
+manager = "pacman"
+package_name = "hwinfo"
+binary_name = "hwinfo"
+
+[[profiles.packages]]
+name = "awww"
+manager = "pacman"
+package_name = "awww"
+binary_name = "awww"
+
+[[profiles.packages]]
+name = "rustormy-bin"
+manager = "pacman"
+package_name = "rustormy-bin"
+binary_name = "rustormy-bin"
+
+[[profiles.packages]]
+name = "linux-cachyos-lts-nvidia-open"
+manager = "pacman"
+package_name = "linux-cachyos-lts-nvidia-open"
+binary_name = "linux-cachyos-lts-nvidia-open"
+
+[[profiles.packages]]
+name = "snapper"
+manager = "pacman"
+package_name = "snapper"
+binary_name = "snapper"
+
+[[profiles.packages]]
+name = "xf86-video-amdgpu"
+manager = "pacman"
+package_name = "xf86-video-amdgpu"
+binary_name = "xf86-video-amdgpu"
+
+[[profiles.packages]]
+name = "lib32-vulkan-radeon"
+manager = "pacman"
+package_name = "lib32-vulkan-radeon"
+binary_name = "lib32-vulkan-radeon"
+
+[[profiles.packages]]
+name = "lib32-opencl-nvidia"
+manager = "pacman"
+package_name = "lib32-opencl-nvidia"
+binary_name = "lib32-opencl-nvidia"
+
+[[profiles.packages]]
+name = "ripgrep"
+manager = "pacman"
+package_name = "ripgrep"
+binary_name = "ripgrep"
+
+[[profiles.packages]]
+name = "sudo"
+manager = "pacman"
+package_name = "sudo"
+binary_name = "sudo"
+
+[[profiles.packages]]
+name = "limine-snapper-sync"
+manager = "pacman"
+package_name = "limine-snapper-sync"
+binary_name = "limine-snapper-sync"
+
+[[profiles.packages]]
+name = "linux-firmware"
+manager = "pacman"
+package_name = "linux-firmware"
+binary_name = "linux-firmware"
+
+[[profiles.packages]]
+name = "device-mapper"
+manager = "pacman"
+package_name = "device-mapper"
+binary_name = "device-mapper"
+
+[[profiles.packages]]
+name = "kitty"
+manager = "pacman"
+package_name = "kitty"
+binary_name = "kitty"
+
+[[profiles.packages]]
+name = "plocate"
+manager = "pacman"
+package_name = "plocate"
+binary_name = "plocate"
+
+[[profiles.packages]]
+name = "cachyos-gaming-meta"
+manager = "pacman"
+package_name = "cachyos-gaming-meta"
+binary_name = "cachyos-gaming-meta"
+
+[[profiles.packages]]
+name = "openssh"
+manager = "pacman"
+package_name = "openssh"
+binary_name = "openssh"
+
+[[profiles.packages]]
+name = "fastfetch"
+manager = "pacman"
+package_name = "fastfetch"
+binary_name = "fastfetch"
+
+[[profiles.packages]]
+name = "bottom"
+manager = "pacman"
+package_name = "bottom"
+binary_name = "bottom"
+
+[[profiles.packages]]
+name = "pipewire-pulse"
+manager = "pacman"
+package_name = "pipewire-pulse"
+binary_name = "pipewire-pulse"
+
+[[profiles.packages]]
+name = "wireplumber"
+manager = "pacman"
+package_name = "wireplumber"
+binary_name = "wireplumber"
+
+[[profiles.packages]]
+name = "opencl-nvidia"
+manager = "pacman"
+package_name = "opencl-nvidia"
+binary_name = "opencl-nvidia"
+
+[[profiles.packages]]
+name = "audacity"
+manager = "pacman"
+package_name = "audacity"
+binary_name = "audacity"
+
+[[profiles.packages]]
+name = "efibootmgr"
+manager = "pacman"
+package_name = "efibootmgr"
+binary_name = "efibootmgr"
+
+[[profiles.packages]]
+name = "supergfxctl"
+manager = "pacman"
+package_name = "supergfxctl"
+binary_name = "supergfxctl"
+
+[[profiles.packages]]
+name = "wev"
+manager = "pacman"
+package_name = "wev"
+binary_name = "wev"
+
+[[profiles.packages]]
+name = "asusctl"
+manager = "pacman"
+package_name = "asusctl"
+binary_name = "asusctl"
+
+[[profiles.packages]]
+name = "cachyos-plymouth-bootanimation"
+manager = "pacman"
+package_name = "cachyos-plymouth-bootanimation"
+binary_name = "cachyos-plymouth-bootanimation"
+
+[[profiles.packages]]
+name = "chwd"
+manager = "pacman"
+package_name = "chwd"
+binary_name = "chwd"
+
+[[profiles.packages]]
+name = "networkmanager-openvpn"
+manager = "pacman"
+package_name = "networkmanager-openvpn"
+binary_name = "networkmanager-openvpn"
+
+[[profiles.packages]]
+name = "pkgfile"
+manager = "pacman"
+package_name = "pkgfile"
+binary_name = "pkgfile"
+
+[[profiles.packages]]
+name = "appimagelauncher"
+manager = "pacman"
+package_name = "appimagelauncher"
+binary_name = "appimagelauncher"
+
+[[profiles.packages]]
+name = "networkmanager"
+manager = "pacman"
+package_name = "networkmanager"
+binary_name = "networkmanager"
+
+[[profiles.packages]]
+name = "ttf-bitstream-vera"
+manager = "pacman"
+package_name = "ttf-bitstream-vera"
+binary_name = "ttf-bitstream-vera"
+
+[[profiles.packages]]
+name = "wget"
+manager = "pacman"
+package_name = "wget"
+binary_name = "wget"
+
+[[profiles.packages]]
+name = "cachyos-rate-mirrors"
+manager = "pacman"
+package_name = "cachyos-rate-mirrors"
+binary_name = "cachyos-rate-mirrors"
+
+[[profiles.packages]]
+name = "gpu-screen-recorder"
+manager = "pacman"
+package_name = "gpu-screen-recorder"
+binary_name = "gpu-screen-recorder"
+
+[[profiles.packages]]
+name = "vivaldi"
+manager = "pacman"
+package_name = "vivaldi"
+binary_name = "vivaldi"
+
+[[profiles.packages]]
+name = "libgsf"
+manager = "pacman"
+package_name = "libgsf"
+binary_name = "libgsf"
+
+[[profiles.packages]]
+name = "pipewire-alsa"
+manager = "pacman"
+package_name = "pipewire-alsa"
+binary_name = "pipewire-alsa"
+
+[[profiles.packages]]
+name = "swayosd"
+manager = "pacman"
+package_name = "swayosd"
+binary_name = "swayosd"
+
+[[profiles.packages]]
+name = "dmidecode"
+manager = "pacman"
+package_name = "dmidecode"
+binary_name = "dmidecode"
+
+[[profiles.packages]]
+name = "btrfs-progs"
+manager = "pacman"
+package_name = "btrfs-progs"
+binary_name = "btrfs-progs"
+
+[[profiles.packages]]
+name = "bluez-obex"
+manager = "pacman"
+package_name = "bluez-obex"
+binary_name = "bluez-obex"
+
+[[profiles.packages]]
+name = "gnome-keyring"
+manager = "pacman"
+package_name = "gnome-keyring"
+binary_name = "gnome-keyring"
+
+[[profiles.packages]]
+name = "hyprshutdown"
+manager = "pacman"
+package_name = "hyprshutdown"
+binary_name = "hyprshutdown"
+
+[[profiles.packages]]
+name = "nfs-utils"
+manager = "pacman"
+package_name = "nfs-utils"
+binary_name = "nfs-utils"
+
+[[profiles.packages]]
+name = "cantarell-fonts"
+manager = "pacman"
+package_name = "cantarell-fonts"
+binary_name = "cantarell-fonts"
+
+[[profiles.packages]]
+name = "linux-cachyos-nvidia-open"
+manager = "pacman"
+package_name = "linux-cachyos-nvidia-open"
+binary_name = "linux-cachyos-nvidia-open"
+
+[[profiles.packages]]
+name = "transmission-qt"
+manager = "pacman"
+package_name = "transmission-qt"
+binary_name = "transmission-qt"
+
+[[profiles.packages]]
+name = "linux-cachyos-lts"
+manager = "pacman"
+package_name = "linux-cachyos-lts"
+binary_name = "linux-cachyos-lts"
+
+[[profiles.packages]]
+name = "noto-fonts-cjk"
+manager = "pacman"
+package_name = "noto-fonts-cjk"
+binary_name = "noto-fonts-cjk"
+
+[[profiles.packages]]
+name = "noto-fonts-emoji"
+manager = "pacman"
+package_name = "noto-fonts-emoji"
+binary_name = "noto-fonts-emoji"
+
+[[profiles.packages]]
+name = "nvidia-prime"
+manager = "pacman"
+package_name = "nvidia-prime"
+binary_name = "nvidia-prime"
+
+[[profiles.packages]]
+name = "bind"
+manager = "pacman"
+package_name = "bind"
+binary_name = "bind"
+
+[[profiles.packages]]
+name = "qemu-img"
+manager = "pacman"
+package_name = "qemu-img"
+binary_name = "qemu-img"
+
+[[profiles.packages]]
+name = "rog-control-center"
+manager = "pacman"
+package_name = "rog-control-center"
+binary_name = "rog-control-center"
+
+[[profiles.packages]]
+name = "os-prober"
+manager = "pacman"
+package_name = "os-prober"
+binary_name = "os-prober"
+
+[[profiles.packages]]
+name = "hwdetect"
+manager = "pacman"
+package_name = "hwdetect"
+binary_name = "hwdetect"
+
+[[profiles.packages]]
+name = "accountsservice"
+manager = "pacman"
+package_name = "accountsservice"
+binary_name = "accountsservice"
+
+[[profiles.packages]]
+name = "cachyos-hello"
+manager = "pacman"
+package_name = "cachyos-hello"
+binary_name = "cachyos-hello"
+
+[[profiles.packages]]
+name = "wl-clipboard"
+manager = "pacman"
+package_name = "wl-clipboard"
+binary_name = "wl-clipboard"
+
+[[profiles.packages]]
+name = "starship"
+manager = "pacman"
+package_name = "starship"
+binary_name = "starship"
+
+[[profiles.packages]]
+name = "vicinae"
+manager = "pacman"
+package_name = "vicinae"
+binary_name = "vicinae"
+
+[[profiles.packages]]
+name = "ttf-liberation"
+manager = "pacman"
+package_name = "ttf-liberation"
+binary_name = "ttf-liberation"
+
+[[profiles.packages]]
+name = "dmraid"
+manager = "pacman"
+package_name = "dmraid"
+binary_name = "dmraid"
+
+[[profiles.packages]]
+name = "unzip"
+manager = "pacman"
+package_name = "unzip"
+binary_name = "unzip"
+
+[[profiles.packages]]
+name = "zed"
+manager = "pacman"
+package_name = "zed"
+binary_name = "zed"
+
+[[profiles.packages]]
+name = "rsync"
+manager = "pacman"
+package_name = "rsync"
+binary_name = "rsync"
+
+[[profiles.packages]]
+name = "nano-syntax-highlighting"
+manager = "pacman"
+package_name = "nano-syntax-highlighting"
+binary_name = "nano-syntax-highlighting"
+
+[[profiles.packages]]
+name = "vulkan-icd-loader"
+manager = "pacman"
+package_name = "vulkan-icd-loader"
+binary_name = "vulkan-icd-loader"
+
+[[profiles.packages]]
+name = "cachyos-hooks"
+manager = "pacman"
+package_name = "cachyos-hooks"
+binary_name = "cachyos-hooks"
+
+[[profiles.packages]]
+name = "duf"
+manager = "pacman"
+package_name = "duf"
+binary_name = "duf"
+
+[[profiles.packages]]
+name = "cachyos-zsh-config"
+manager = "pacman"
+package_name = "cachyos-zsh-config"
+binary_name = "cachyos-zsh-config"
+
+[[profiles.packages]]
+name = "base-devel"
+manager = "pacman"
+package_name = "base-devel"
+binary_name = "base-devel"
+
+[[profiles.packages]]
+name = "lib32-nvidia-utils"
+manager = "pacman"
+package_name = "lib32-nvidia-utils"
+binary_name = "lib32-nvidia-utils"
+
+[[profiles.packages]]
+name = "cachyos-micro-settings"
+manager = "pacman"
+package_name = "cachyos-micro-settings"
+binary_name = "cachyos-micro-settings"
+
+[[profiles.packages]]
+name = "bluetuith"
+manager = "pacman"
+package_name = "bluetuith"
+binary_name = "bluetuith"
+
+[[profiles.packages]]
+name = "ttf-meslo-nerd"
+manager = "pacman"
+package_name = "ttf-meslo-nerd"
+binary_name = "ttf-meslo-nerd"
+
+[[profiles.packages]]
+name = "qt6ct"
+manager = "pacman"
+package_name = "qt6ct"
+binary_name = "qt6ct"
+
+[[profiles.packages]]
+name = "gst-plugin-pipewire"
+manager = "pacman"
+package_name = "gst-plugin-pipewire"
+binary_name = "gst-plugin-pipewire"
+
+[[profiles.packages]]
+name = "jfsutils"
+manager = "pacman"
+package_name = "jfsutils"
+binary_name = "jfsutils"
+
+[[profiles.packages]]
+name = "alsa-utils"
+manager = "pacman"
+package_name = "alsa-utils"
+binary_name = "alsa-utils"
+
+[[profiles.packages]]
+name = "dotstate-bin"
+manager = "pacman"
+package_name = "dotstate-bin"
+binary_name = "dotstate-bin"
+
+[[profiles.packages]]
+name = "which"
+manager = "pacman"
+package_name = "which"
+binary_name = "which"
+
+[[profiles.packages]]
+name = "shotcut"
+manager = "pacman"
+package_name = "shotcut"
+binary_name = "shotcut"
+
+[[profiles.packages]]
+name = "glances"
+manager = "pacman"
+package_name = "glances"
+binary_name = "glances"
+
+[[profiles.packages]]
+name = "mdadm"
+manager = "pacman"
+package_name = "mdadm"
+binary_name = "mdadm"
+
+[[profiles.packages]]
+name = "qalculate-gtk"
+manager = "pacman"
+package_name = "qalculate-gtk"
+binary_name = "qalculate-gtk"
+
+[[profiles.packages]]
+name = "less"
+manager = "pacman"
+package_name = "less"
+binary_name = "less"
+
+[[profiles.packages]]
+name = "nvidia-utils"
+manager = "pacman"
+package_name = "nvidia-utils"
+binary_name = "nvidia-utils"
+
+[[profiles.packages]]
+name = "limine"
+manager = "pacman"
+package_name = "limine"
+binary_name = "limine"
+
+[[profiles.packages]]
+name = "hyprland"
+manager = "pacman"
+package_name = "hyprland"
+binary_name = "hyprland"
+
+[[profiles.packages]]
+name = "wiremix"
+manager = "pacman"
+package_name = "wiremix"
+binary_name = "wiremix"
+
+[[profiles.packages]]
+name = "gst-plugins-bad"
+manager = "pacman"
+package_name = "gst-plugins-bad"
+binary_name = "gst-plugins-bad"
+
+[[profiles.packages]]
+name = "power-profiles-daemon"
+manager = "pacman"
+package_name = "power-profiles-daemon"
+binary_name = "power-profiles-daemon"
+
+[[profiles.packages]]
+name = "sysfsutils"
+manager = "pacman"
+package_name = "sysfsutils"
+binary_name = "sysfsutils"
+
+[[profiles.packages]]
+name = "dnsmasq"
+manager = "pacman"
+package_name = "dnsmasq"
+binary_name = "dnsmasq"
+
+[[profiles.packages]]
+name = "lib32-vulkan-icd-loader"
+manager = "pacman"
+package_name = "lib32-vulkan-icd-loader"
+binary_name = "lib32-vulkan-icd-loader"
+
+[[profiles.packages]]
+name = "firefox"
+manager = "pacman"
+package_name = "firefox"
+binary_name = "firefox"
+
+[[profiles.packages]]
+name = "libopenraw"
+manager = "pacman"
+package_name = "libopenraw"
+binary_name = "libopenraw"
+
+[[profiles.packages]]
+name = "btop"
+manager = "pacman"
+package_name = "btop"
+binary_name = "btop"
+
+[[profiles.packages]]
+name = "cryptsetup"
+manager = "pacman"
+package_name = "cryptsetup"
+binary_name = "cryptsetup"
+
+[[profiles.packages]]
+name = "cachyos-packageinstaller"
+manager = "pacman"
+package_name = "cachyos-packageinstaller"
+binary_name = "cachyos-packageinstaller"
+
+[[profiles.packages]]
+name = "lsscsi"
+manager = "pacman"
+package_name = "lsscsi"
+binary_name = "lsscsi"
+
+[[profiles.packages]]
+name = "histui"
+manager = "pacman"
+package_name = "histui"
+binary_name = "histui"
+
+[[profiles.packages]]
+name = "nwg-look"
+manager = "pacman"
+package_name = "nwg-look"
+binary_name = "nwg-look"
+
+[[profiles.packages]]
+name = "matugen"
+manager = "pacman"
+package_name = "matugen"
+binary_name = "matugen"
+
+[[profiles.packages]]
+name = "cachyos-plymouth-theme"
+manager = "pacman"
+package_name = "cachyos-plymouth-theme"
+binary_name = "cachyos-plymouth-theme"
+
+[[profiles.packages]]
+name = "efitools"
+manager = "pacman"
+package_name = "efitools"
+binary_name = "efitools"
+
+[[profiles.packages]]
+name = "linux-cachyos-lts-headers"
+manager = "pacman"
+package_name = "linux-cachyos-lts-headers"
+binary_name = "linux-cachyos-lts-headers"
+
+[[profiles.packages]]
+name = "lvm2"
+manager = "pacman"
+package_name = "lvm2"
+binary_name = "lvm2"
+
+[[profiles.packages]]
+name = "poppler-glib"
+manager = "pacman"
+package_name = "poppler-glib"
+binary_name = "poppler-glib"
+
+[[profiles.packages]]
+name = "rustrover"
+manager = "pacman"
+package_name = "rustrover"
+binary_name = "rustrover"
+
+[[profiles.packages]]
+name = "plymouth"
+manager = "pacman"
+package_name = "plymouth"
+binary_name = "plymouth"
+
+[[profiles.packages]]
+name = "ytm-player"
+manager = "pacman"
+package_name = "ytm-player"
+binary_name = "ytm-player"
+
+[[profiles.packages]]
+name = "reflector"
+manager = "pacman"
+package_name = "reflector"
+binary_name = "reflector"
+
+[[profiles.packages]]
+name = "python-packaging"
+manager = "pacman"
+package_name = "python-packaging"
+binary_name = "python-packaging"
+
+[[profiles.packages]]
+name = "man-pages"
+manager = "pacman"
+package_name = "man-pages"
+binary_name = "man-pages"
+
+[[profiles.packages]]
+name = "ttf-dejavu"
+manager = "pacman"
+package_name = "ttf-dejavu"
+binary_name = "ttf-dejavu"
+
+[[profiles.packages]]
+name = "cava"
+manager = "pacman"
+package_name = "cava"
+binary_name = "cava"
+
+[[profiles.packages]]
+name = "smartmontools"
+manager = "pacman"
+package_name = "smartmontools"
+binary_name = "smartmontools"
+
+[[profiles.packages]]
+name = "python-defusedxml"
+manager = "pacman"
+package_name = "python-defusedxml"
+binary_name = "python-defusedxml"
+
+[[profiles.packages]]
+name = "cachyos-gaming-applications"
+manager = "pacman"
+package_name = "cachyos-gaming-applications"
+binary_name = "cachyos-gaming-applications"
+
+[[profiles.packages]]
+name = "fwupd"
+manager = "pacman"
+package_name = "fwupd"
+binary_name = "fwupd"
+
+[[profiles.packages]]
+name = "logrotate"
+manager = "pacman"
+package_name = "logrotate"
+binary_name = "logrotate"
+
+[[profiles.packages]]
+name = "netctl"
+manager = "pacman"
+package_name = "netctl"
+binary_name = "netctl"
+
+[[profiles.packages]]
+name = "ly"
+manager = "pacman"
+package_name = "ly"
+binary_name = "ly"
+
+[[profiles.packages]]
+name = "upower"
+manager = "pacman"
+package_name = "upower"
+binary_name = "upower"
+
+[[profiles.packages]]
+name = "mtools"
+manager = "pacman"
+package_name = "mtools"
+binary_name = "mtools"
+
+[[profiles.packages]]
+name = "pv"
+manager = "pacman"
+package_name = "pv"
+binary_name = "pv"
+
+[[profiles.packages]]
+name = "nmtui-go"
+manager = "pacman"
+package_name = "nmtui-go"
+binary_name = "nmtui-go"
+
+[[profiles.packages]]
+name = "wpa_supplicant"
+manager = "pacman"
+package_name = "wpa_supplicant"
+binary_name = "wpa_supplicant"
+
+[[profiles.packages]]
+name = "libreoffice-fresh"
+manager = "pacman"
+package_name = "libreoffice-fresh"
+binary_name = "libreoffice-fresh"
+
+[[profiles.packages]]
+name = "awesome-terminal-fonts"
+manager = "pacman"
+package_name = "awesome-terminal-fonts"
+binary_name = "awesome-terminal-fonts"
+
+[[profiles.packages]]
+name = "gst-libav"
+manager = "pacman"
+package_name = "gst-libav"
+binary_name = "gst-libav"
+
+[[profiles.packages]]
+name = "polkit-kde-agent"
+manager = "pacman"
+package_name = "polkit-kde-agent"
+binary_name = "polkit-kde-agent"
+
+[[profiles.packages]]
+name = "xdg-desktop-portal-hyprland"
+manager = "pacman"
+package_name = "xdg-desktop-portal-hyprland"
+binary_name = "xdg-desktop-portal-hyprland"
+
+[[profiles.packages]]
+name = "f2fs-tools"
+manager = "pacman"
+package_name = "f2fs-tools"
+binary_name = "f2fs-tools"
+
+[[profiles.packages]]
+name = "seanime"
+manager = "pacman"
+package_name = "seanime"
+binary_name = "seanime"
+
+[[profiles.packages]]
+name = "inetutils"
+manager = "pacman"
+package_name = "inetutils"
+binary_name = "inetutils"
+
+[[profiles.packages]]
+name = "s-nail"
+manager = "pacman"
+package_name = "s-nail"
+binary_name = "s-nail"
+
+[[profiles.packages]]
+name = "iwd"
+manager = "pacman"
+package_name = "iwd"
+binary_name = "iwd"
+
+[[profiles.packages]]
+name = "sof-firmware"
+manager = "pacman"
+package_name = "sof-firmware"
+binary_name = "sof-firmware"
+
+[[profiles.packages]]
+name = "rustrover-jre"
+manager = "pacman"
+package_name = "rustrover-jre"
+binary_name = "rustrover-jre"
+
+[[profiles.packages]]
+name = "limine-mkinitcpio-hook"
+manager = "pacman"
+package_name = "limine-mkinitcpio-hook"
+binary_name = "limine-mkinitcpio-hook"
+
+[[profiles.packages]]
+name = "vulkan-radeon"
+manager = "pacman"
+package_name = "vulkan-radeon"
+binary_name = "vulkan-radeon"
+
+[[profiles.packages]]
+name = "modemmanager"
+manager = "pacman"
+package_name = "modemmanager"
+binary_name = "modemmanager"
+
+[[profiles.packages]]
+name = "uwsm"
+manager = "pacman"
+package_name = "uwsm"
+binary_name = "uwsm"
+
+[[profiles.packages]]
+name = "python"
+manager = "pacman"
+package_name = "python"
+binary_name = "python"
+
+[[profiles.packages]]
+name = "xl2tpd"
+manager = "pacman"
+package_name = "xl2tpd"
+binary_name = "xl2tpd"
+
+[[profiles.packages]]
+name = "gst-plugins-ugly"
+manager = "pacman"
+package_name = "gst-plugins-ugly"
+binary_name = "gst-plugins-ugly"
+
+[[profiles.packages]]
+name = "exfatprogs"
+manager = "pacman"
+package_name = "exfatprogs"
+binary_name = "exfatprogs"
+
+[[profiles.packages]]
+name = "cachyos-keyring"
+manager = "pacman"
+package_name = "cachyos-keyring"
+binary_name = "cachyos-keyring"
+
+[[profiles.packages]]
+name = "nano"
+manager = "pacman"
+package_name = "nano"
+binary_name = "nano"
+
+[[profiles.packages]]
+name = "nss-mdns"
+manager = "pacman"
+package_name = "nss-mdns"
+binary_name = "nss-mdns"
+
+[[profiles.packages]]
+name = "ttf-opensans"
+manager = "pacman"
+package_name = "ttf-opensans"
+binary_name = "ttf-opensans"
+
+[[profiles.packages]]
+name = "wleave"
+manager = "pacman"
+package_name = "wleave"
+binary_name = "wleave"
+
+[[profiles.packages]]
+name = "bluez-libs"
+manager = "pacman"
+package_name = "bluez-libs"
+binary_name = "bluez-libs"
+
+[[profiles.packages]]
+name = "lsb-release"
+manager = "pacman"
+package_name = "lsb-release"
+binary_name = "lsb-release"
+
+[[profiles.packages]]
+name = "fsarchiver"
+manager = "pacman"
+package_name = "fsarchiver"
+binary_name = "fsarchiver"
+
+[[profiles.packages]]
+name = "git"
+manager = "pacman"
+package_name = "git"
+binary_name = "git"
+
+[[profiles.packages]]
+name = "sg3_utils"
+manager = "pacman"
+package_name = "sg3_utils"
+binary_name = "sg3_utils"
+
+[[profiles.packages]]
+name = "xorg-xwayland"
+manager = "pacman"
+package_name = "xorg-xwayland"
+binary_name = "xorg-xwayland"
+
+[[profiles.packages]]
+name = "rustup"
+manager = "pacman"
+package_name = "rustup"
+binary_name = "rustup"
+
+[[profiles.packages]]
+name = "cachyos-kernel-manager"
+manager = "pacman"
+package_name = "cachyos-kernel-manager"
+binary_name = "cachyos-kernel-manager"
+
+[[profiles.packages]]
+name = "cachyos-wallpapers"
+manager = "pacman"
+package_name = "cachyos-wallpapers"
+binary_name = "cachyos-wallpapers"
+
+[[profiles.packages]]
+name = "man-db"
+manager = "pacman"
+package_name = "man-db"
+binary_name = "man-db"
+
+[[profiles.packages]]
+name = "cachyos-mirrorlist"
+manager = "pacman"
+package_name = "cachyos-mirrorlist"
+binary_name = "cachyos-mirrorlist"
+
+[[profiles.packages]]
+name = "e2fsprogs"
+manager = "pacman"
+package_name = "e2fsprogs"
+binary_name = "e2fsprogs"
+
+[[profiles.packages]]
+name = "dosfstools"
+manager = "pacman"
+package_name = "dosfstools"
+binary_name = "dosfstools"
+
+[[profiles.packages]]
+name = "mesa-utils"
+manager = "pacman"
+package_name = "mesa-utils"
+binary_name = "mesa-utils"
+
+[[profiles.packages]]
+name = "gst-plugin-va"
+manager = "pacman"
+package_name = "gst-plugin-va"
+binary_name = "gst-plugin-va"
+
+[[profiles.packages]]
+name = "shelly"
+manager = "pacman"
+package_name = "shelly"
+binary_name = "shelly"
+
+[[profiles.packages]]
+name = "nvidia-settings"
+manager = "pacman"
+package_name = "nvidia-settings"
+binary_name = "nvidia-settings"
+
+[[profiles.packages]]
+name = "switcheroo-control"
+manager = "pacman"
+package_name = "switcheroo-control"
+binary_name = "switcheroo-control"
+
+[[profiles.packages]]
+name = "hyprshot"
+manager = "pacman"
+package_name = "hyprshot"
+binary_name = "hyprshot"
+
+[[profiles.packages]]
+name = "ffmpegthumbnailer"
+manager = "pacman"
+package_name = "ffmpegthumbnailer"
+binary_name = "ffmpegthumbnailer"
+
+[[profiles.packages]]
+name = "rebuild-detector"
+manager = "pacman"
+package_name = "rebuild-detector"
+binary_name = "rebuild-detector"
+
+[[profiles.packages]]
+name = "cachyos-settings"
+manager = "pacman"
+package_name = "cachyos-settings"
+binary_name = "cachyos-settings"
+
+[[profiles.packages]]
+name = "alsa-plugins"
+manager = "pacman"
+package_name = "alsa-plugins"
+binary_name = "alsa-plugins"
+
+[[profiles.packages]]
+name = "micro"
+manager = "pacman"
+package_name = "micro"
+binary_name = "micro"
+
+[[profiles.packages]]
+name = "cachyos-snapper-support"
+manager = "pacman"
+package_name = "cachyos-snapper-support"
+binary_name = "cachyos-snapper-support"
+
+[[profiles.packages]]
+name = "mkinitcpio"
+manager = "pacman"
+package_name = "mkinitcpio"
+binary_name = "mkinitcpio"
+
+[[profiles.packages]]
+name = "pacman-contrib"
+manager = "pacman"
+package_name = "pacman-contrib"
+binary_name = "pacman-contrib"
+
+[[profiles.packages]]
+name = "linux-cachyos"
+manager = "pacman"
+package_name = "linux-cachyos"
+binary_name = "linux-cachyos"
+
+[[profiles.packages]]
+name = "arc-gtk-theme"
+manager = "pacman"
+package_name = "arc-gtk-theme"
+binary_name = "arc-gtk-theme"
+
+[[profiles.packages]]
+name = "anytype-bin"
+manager = "pacman"
+package_name = "anytype-bin"
+binary_name = "anytype-bin"
+
+[[profiles.packages]]
+name = "oculante"
+manager = "pacman"
+package_name = "oculante"
+binary_name = "oculante"
+
+[[profiles.packages]]
+name = "tty-clock"
+manager = "pacman"
+package_name = "tty-clock"
+binary_name = "tty-clock"
+
+[[profiles.packages]]
+name = "perl"
+manager = "pacman"
+package_name = "perl"
+binary_name = "perl"
+
+[[profiles.packages]]
+name = "cachyos-v4-mirrorlist"
+manager = "pacman"
+package_name = "cachyos-v4-mirrorlist"
+binary_name = "cachyos-v4-mirrorlist"
+
+[[profiles.packages]]
+name = "yazi"
+manager = "pacman"
+package_name = "yazi"
+binary_name = "yazi"
+
+[[profiles.packages]]
+name = "base"
+manager = "pacman"
+package_name = "base"
+binary_name = "base"
+
+[[profiles.packages]]
+name = "bash-completion"
+manager = "pacman"
+package_name = "bash-completion"
+binary_name = "bash-completion"
+
+[[profiles.packages]]
+name = "xorg-xhost"
+manager = "pacman"
+package_name = "xorg-xhost"
+binary_name = "xorg-xhost"
+
+[[profiles.packages]]
+name = "vim"
+manager = "pacman"
+package_name = "vim"
+binary_name = "vim"
+
+[[profiles.packages]]
+name = "vesktop"
+manager = "pacman"
+package_name = "vesktop"
+binary_name = "vesktop"
+
+[[profiles.packages]]
+name = "cachyos-fish-config"
+manager = "pacman"
+package_name = "cachyos-fish-config"
+binary_name = "cachyos-fish-config"
+
+[[profiles.packages]]
+name = "ufw"
+manager = "pacman"
+package_name = "ufw"
+binary_name = "ufw"
+
+[[profiles.packages]]
+name = "batctl-tui"
+manager = "pacman"
+package_name = "batctl-tui"
+binary_name = "batctl-tui"
+
+[[profiles.packages]]
+name = "usb_modeswitch"
+manager = "pacman"
+package_name = "usb_modeswitch"
+binary_name = "usb_modeswitch"
+
+[[profiles.packages]]
+name = "linux-cachyos-headers"
+manager = "pacman"
+package_name = "linux-cachyos-headers"
+binary_name = "linux-cachyos-headers"
+
+[[profiles.packages]]
+name = "cpupower"
+manager = "pacman"
+package_name = "cpupower"
+binary_name = "cpupower"
+
+[[profiles.packages]]
+name = "gpu-screen-recorder-ui"
+manager = "pacman"
+package_name = "gpu-screen-recorder-ui"
+binary_name = "gpu-screen-recorder-ui"
+
+[[profiles.packages]]
+name = "bluez-hid2hci"
+manager = "pacman"
+package_name = "bluez-hid2hci"
+binary_name = "bluez-hid2hci"
+
+[[profiles.packages]]
+name = "bluez-utils"
+manager = "pacman"
+package_name = "bluez-utils"
+binary_name = "bluez-utils"
+
+[[profiles.packages]]
+name = "hdparm"
+manager = "pacman"
+package_name = "hdparm"
+binary_name = "hdparm"
+
+[[profiles.packages]]
+name = "hyprpolkitagent"
+manager = "pacman"
+package_name = "hyprpolkitagent"
+binary_name = "hyprpolkitagent"
+
+[[profiles.packages]]
+name = "brightnessctl"
+manager = "pacman"
+package_name = "brightnessctl"
+binary_name = "brightnessctl"
+
+[[profiles.packages]]
+name = "jolt"
+manager = "pacman"
+package_name = "jolt"
+binary_name = "jolt"
+
+[[profiles.packages]]
+name = "alacritty"
+manager = "pacman"
+package_name = "alacritty"
+binary_name = "alacritty"
+
+[[profiles.packages]]
+name = "usbutils"
+manager = "pacman"
+package_name = "usbutils"
+binary_name = "usbutils"
+
+[[profiles.packages]]
+name = "cachyos-v3-mirrorlist"
+manager = "pacman"
+package_name = "cachyos-v3-mirrorlist"
+binary_name = "cachyos-v3-mirrorlist"
+
+[[profiles.packages]]
+name = "alsa-firmware"
+manager = "pacman"
+package_name = "alsa-firmware"
+binary_name = "alsa-firmware"
+
+[[profiles.packages]]
+name = "libdvdcss"
+manager = "pacman"
+package_name = "libdvdcss"
+binary_name = "libdvdcss"
+
+[[profiles.packages]]
+name = "libva-nvidia-driver"
+manager = "pacman"
+package_name = "libva-nvidia-driver"
+binary_name = "libva-nvidia-driver"
+
+[[profiles.packages]]
+name = "bitwarden-cli"
+manager = "pacman"
+package_name = "bitwarden-cli"
+binary_name = "bitwarden-cli"
+
+[[profiles.packages]]
+name = "bluez"
+manager = "pacman"
+package_name = "bluez"
+binary_name = "bluez"
+
+[[profiles.packages]]
+name = "xfsprogs"
+manager = "pacman"
+package_name = "xfsprogs"
+binary_name = "xfsprogs"
+
+[[profiles.packages]]
+name = "diskonaut"
+manager = "pacman"
+package_name = "diskonaut"
+binary_name = "diskonaut"
+
+[[profiles.packages]]
+name = "hyprpicker"
+manager = "pacman"
+package_name = "hyprpicker"
+binary_name = "hyprpicker"
+
+[[profiles.packages]]
+name = "texinfo"
+manager = "pacman"
+package_name = "texinfo"
+binary_name = "texinfo"
+
+[[profiles.packages]]
+name = "meld"
+manager = "pacman"
+package_name = "meld"
+binary_name = "meld"
+
+[[profiles.packages]]
+name = "btrfs-assistant"
+manager = "pacman"
+package_name = "btrfs-assistant"
+binary_name = "btrfs-assistant"
+
+[[profiles.packages]]
+name = "ouch"
+manager = "pacman"
+package_name = "ouch"
+binary_name = "ouch"
+
+[[profiles.packages]]
+name = "unrar"
+manager = "pacman"
+package_name = "unrar"
+binary_name = "unrar"

@@ -37,6 +37,7 @@ hl.monitor({
 -------------------
 hl.on("hyprland.start", function ()
     hl.exec_cmd("awww-daemon &")
+    hl.exec_cmd("swayosd-server &")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("xhost +SI:localuser:root")
     hl.exec_cmd("histuid")
@@ -254,20 +255,32 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Multimedia Keys: bindel -> { repeating = true, locked = true } | bindl -> { locked = true }
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true, locked = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true, locked = true })
---hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { repeating = true, locked = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { repeating = true, locked = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { repeating = true, locked = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { repeating = true, locked = true })
+hl.bind("XF86AudioRaiseVolume",
+    hl.dsp.exec_cmd("swayosd-client --output-volume raise"),
+    { repeating = true, locked = true })
+
+hl.bind("XF86AudioLowerVolume",
+    hl.dsp.exec_cmd("swayosd-client --output-volume lower"),
+    { repeating = true, locked = true })
+
+--hl.bind("XF86AudioMute",
+--    hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"),
+--    { repeating = true, locked = true })
+
+hl.bind("XF86MonBrightnessUp",
+    hl.dsp.exec_cmd("swayosd-client --brightness raise"),
+    { repeating = true, locked = true })
+
+hl.bind("XF86MonBrightnessDown",
+    hl.dsp.exec_cmd("swayosd-client --brightness lower"),
+    { repeating = true, locked = true })
 
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
--- Vicinae bindings (bindr -> { release = true })
-hl.bind("SUPER", hl.dsp.exec_cmd("vicinae vicinae://launch/applications"), { release = true })
+-- Vicinae bindings 
 hl.bind("ALT + Space", hl.dsp.exec_cmd("vicinae toggle"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"))
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("vicinae vicinae://launch/wm/switch-windows"))
