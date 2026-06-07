@@ -1,0 +1,42 @@
+layout {
+    pane split_direction="vertical" {
+        // COLUMN 1: THE MAIN STAGE (Left - 40%)
+        pane size="40%" split_direction="horizontal" {
+            // btm --battery restricted to a small height at the top
+            pane name="Battery" size="40%" {
+                command "btm"
+                args "--battery"
+            }
+            // ytm-player takes the rest of the left column
+            pane name="Music" size="60%" {
+                command "ytm"
+            }
+        }
+
+        // COLUMN 2: THE STATUS TOWER (Right - 60%)
+        pane size="60%" split_direction="horizontal" {
+            
+            // Top Row: Time and Visualizer
+            pane split_direction="vertical" size="20%" {
+                pane name="Clock" size="20%" { command "tty-clock"; args "-c" "-C" "2"; }
+                pane name="Visualizer" { command "cava"; }
+            }
+
+            // Middle Row: Weather and Audio Mixer
+            pane split_direction="vertical" size="30%" {
+                pane name="Weather" size="25%" { 
+                    command "rustormy"
+                    args "-c" "Kohima" "--units" "metric" "--colors" "-l" 
+                }
+                pane name="Audio" { command "wiremix"; }
+            }
+
+            // Bottom Row: Management Stack
+            pane name="Management" size="50%" stacked=true {
+                pane name="Notifs" { command "histui"; }
+                pane name="Net" { command "nmtui-go"; }
+                pane name="Bluetooth" { command "bluetuith"; }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+# Rustormy Configuration File
+# This file is in TOML format. See https://toml.io/ for details
+#
+# Check the documentation for configuration options: https://github.com/Tairesh/rustormy/tree/main?tab=readme-ov-file#configuration
+
+providers = ["open_meteo"]
+live_mode = false
+live_mode_interval = 300
+use_geocoding_cache = false
+verbose = 0
+connect_timeout = 10
+
+[api_keys]
+open_weather_map = ""
+world_weather_online = ""
+weather_api = ""
+weather_bit = ""
+tomorrow_io = ""
+open_uv = ""
+
+[format]
+output_format = "text"
+text_mode = "full"
+use_colors = false
+show_city_name = false
+align_right = false
+wind_in_degrees = false
+units = "metric"
+language = "en"
+
+[format.color_theme]
+label = "BrightBlue"
+location = "BrightWhite"
+temperature = "BrightYellow"
+wind = "BrightRed"
+precipitation = "BrightCyan"
+pressure = "BrightGreen"
+humidity = "Blue"

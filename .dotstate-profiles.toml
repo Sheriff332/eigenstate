@@ -5,5 +5,27 @@ synced_files = []
 
 [[profiles]]
 name = "Personal"
-synced_files = []
+synced_files = [
+    ".config/bottom",
+    ".config/btop",
+    ".config/cava",
+    ".config/fastfetch",
+    ".config/fish",
+    ".config/gtk-3.0",
+    ".config/gtk-4.0",
+    ".config/histui",
+    ".config/hypr",
+    ".config/kitty",
+    ".config/mimeapps.list",
+    ".config/mpv",
+    ".config/nwg-look",
+    ".config/qt6ct",
+    ".config/rustormy",
+    ".config/starship.toml",
+    ".config/systemd/user",
+    ".config/vicinae",
+    ".config/xdg-desktop-portal",
+    ".config/zed",
+    ".config/zellij",
+]
 packages = []

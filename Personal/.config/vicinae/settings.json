@@ -1,0 +1,216 @@
+// This configuration is merged with the default vicinae configuration file, which you can obtain by running the `vicinae config default` command.
+// Every item defined in this file takes precedence over the values defined in the default config or any other imported file.
+//
+// You can make manual edits to this file, however you should keep in mind that this file may be written to by vicinae when a configuration change is made through the GUI.
+// When that happens, any custom comments or formatting will be lost.
+//
+// If you want to maintain a configuration file with your own comments and formatting, you should create a separate file and add it to the 'imports' array.
+//
+// Learn more about configuration at https://docs.vicinae.com/config
+
+{
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "close_on_focus_loss": false,
+   "activate_on_single_click": true,
+   "theme": {
+      "dark": {
+         "name": "catppuccin-mocha"
+      }
+   },
+   "launcher_window": {
+      "opacity": 0.7
+   },
+   "favorites": [
+      "@jomifepe/store.raycast.bitwarden:search",
+      "@jomifepe/store.raycast.bitwarden:create-login",
+      "@jomifepe/store.raycast.bitwarden:generate-password-quick",
+      "@tonka3000/store.raycast.speedtest:index",
+      "@jomifepe/store.raycast.bitwarden:authenticator",
+      "@josephschmitt/store.raycast.gif-search:search",
+      "applications:qalculate-gtk"
+   ],
+   "providers": {
+      "@jomifepe/store.raycast.bitwarden": {
+         "preferences": {
+            "fetchFavicons": true,
+            "repromptIgnoreDuration": "-1",
+            "serverUrl": "https://vault.bitwarden.eu",
+            "shouldCacheVaultItems": true,
+            "syncOnLaunch": true,
+            "windowActionOnCopy": "keepOpen",
+            "cliPath": "/usr/sbin/bw"
+         },
+         "entrypoints": {
+            "create-folder": {
+               "enabled": false
+            },
+            "create-send": {
+               "enabled": false
+            },
+            "lock-vault": {
+               "enabled": false
+            },
+            "logout-vault": {
+               "enabled": false
+            },
+            "receive-send": {
+               "enabled": false
+            },
+            "search-sends": {
+               "enabled": false
+            }
+         }
+      },
+      "@rithvikvibhu/store.vicinae.arch-packages": {
+         "enabled": false
+      },
+      "@sovereign/store.vicinae.awww-switcher": {
+         "preferences": {
+            "wallpaperPath": "/home/sheriff/Pictures/wallpapers",
+            "colorGenTool": "none",
+            "gridRows": "4",
+            "postProduction": "no",
+            "showImageDetails": true,
+            "toggleVicinaeSetting": true,
+            "transitionDuration": "3",
+            "transitionFPS": "60",
+            "transitionStep": "90",
+            "transitionType": "random"
+         }
+      },
+      "applications": {
+         "entrypoints": {
+            "Alacritty": {
+               "enabled": true
+            },
+            "qalculate-gtk": {
+               "alias": "calc"
+            }
+         }
+      },
+      "browser-extension": {
+         "entrypoints": {
+            "browse-tabs": {
+               "enabled": false
+            },
+            "shortcut-active-tab": {
+               "enabled": false
+            }
+         }
+      },
+      "clipboard": {
+         "preferences": {
+            "monitoring": true
+         },
+         "entrypoints": {
+            "clear": {
+               "enabled": false
+            }
+         }
+      },
+      "core": {
+         "entrypoints": {
+            "about": {
+               "enabled": false
+            },
+            "documentation": {
+               "enabled": false
+            },
+            "keybind-settings": {
+               "enabled": false
+            },
+            "list-extensions": {
+               "enabled": false
+            },
+            "manage-fallback": {
+               "enabled": false
+            },
+            "oauth-token-store": {
+               "enabled": false
+            },
+            "open-config-file": {
+               "enabled": false
+            },
+            "open-default-config": {
+               "enabled": false
+            },
+            "prune-memory": {
+               "enabled": false
+            },
+            "refresh-apps": {
+               "enabled": true
+            },
+            "reload-scripts": {
+               "enabled": false
+            },
+            "report-bug": {
+               "enabled": false
+            },
+            "search-builtin-icons": {
+               "enabled": false
+            },
+            "settings": {
+               "enabled": false
+            },
+            "sponsor": {
+               "enabled": false
+            },
+            "store": {
+               "enabled": true
+            }
+         }
+      },
+      "developer": {
+         "enabled": false
+      },
+      "files": {
+         "preferences": {
+            "autoIndexing": true,
+            "excludedPaths": "",
+            "paths": "/home/sheriff/",
+            "watcherPaths": ""
+         }
+      },
+      "font": {
+         "enabled": true,
+         "entrypoints": {
+            "browse": {
+               "enabled": true
+            }
+         }
+      },
+      "manage-shortcuts": {
+         "enabled": false
+      },
+      "power": {
+         "enabled": false
+      },
+      "raycast-compat": {
+         "entrypoints": {
+            "store": {
+               "enabled": true
+            }
+         }
+      },
+      "scripts": {
+         "enabled": false
+      },
+      "shortcuts": {
+         "enabled": false
+      },
+      "system": {
+         "enabled": false,
+         "entrypoints": {
+            "browse-apps": {
+               "preferences": {
+                  "showHidden": false,
+                  "sortAlphabetically": true
+               }
+            },
+            "run": {
+               "alias": "$"
+            }
+         }
+      }
+   }
+}

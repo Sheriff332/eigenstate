@@ -1,0 +1,133 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/home/sheriff/.config/fastfetch/ascii/*.txt",
+    "color": { "1": "38;5;211" },
+  },
+  "display": {
+    "color": "blue",
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "format": "┌────────────────────── Hardware ──────────────────────┐",
+      "outputColor": "38;5;222",
+    },
+    {
+      "type": "title",
+      "key": " PC",
+      "keyColor": "green",
+    },
+    {
+      "type": "cpu",
+      "key": "│ ├󰍛CPU",
+      "showPeCoreCount": true,
+      "format": "{1}",
+      "keyColor": "green",
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├󰍛 GPU",
+      "keyColor": "green",
+    },
+    {
+      "type": "memory",
+      "key": "└ └󰍛 Memory",
+      "keyColor": "green",
+    },
+    {
+      "type": "display",
+      "key": "└ └󰍛 Display",
+      "keyColor": "green",
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────────────────┘",
+      "outputColor": "38;5;222",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "┌────────────────────── Software ──────────────────────┐",
+      "outputColor": "38;5;222",
+    },
+    {
+      "type": "os",
+      "key": " OS",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "host",
+      "key": "│ ├ Host",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "kernel",
+      "key": "│ ├ Kernel",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "packages",
+      "key": "│ ├󰏖 Packages",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "shell",
+      "key": "│ ├ Shell",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "terminal",
+      "key": "└ └ terminal",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "uptime",
+      "key": "└ └ Uptime",
+      "keyColor": "yellow",
+    },
+    "break",
+    {
+      "type": "de",
+      "key": " DE",
+      "keyColor": "blue",
+    },
+    {
+      "type": "lm",
+      "key": "│ ├ LM",
+      "keyColor": "blue",
+    },
+    {
+      "type": "wm",
+      "key": "│ ├ WM",
+      "keyColor": "blue",
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├󰍛 GPU Driver",
+      "format": "{3}",
+      "keyColor": "blue",
+    },
+    {
+      "type": "wmtheme",
+      "key": "└ └󰉼 Theme",
+      "keyColor": "blue",
+    },
+    {
+      "type": "cursor",
+      "key": "└ └󰉼 Cursor",
+      "keyColor": "blue",
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────────────────┘",
+      "outputColor": "38;5;222",
+    },
+    {
+      "type": "custom",
+      "format": "                       \u001b[38;5;205m  \u001b[38;5;226m  \u001b[38;5;39m  \u001b[38;5;196m ",
+    },
+    "break",
+  ],
+}
