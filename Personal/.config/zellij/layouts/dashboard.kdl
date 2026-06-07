@@ -34,7 +34,7 @@ layout {
             // Bottom Row: Management Stack
             pane name="Management" size="50%" stacked=true {
                 pane name="Notifs" { command "histui"; }
-                pane name="Net" { command "nmtui-go"; }
+                pane name="Net" { command "impala"; }
                 pane name="Bluetooth" { command "bluetuith"; }
             }
         }

@@ -263,9 +263,9 @@ hl.bind("XF86AudioLowerVolume",
     hl.dsp.exec_cmd("swayosd-client --output-volume lower"),
     { repeating = true, locked = true })
 
---hl.bind("XF86AudioMute",
---    hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"),
---    { repeating = true, locked = true })
+hl.bind("XF86AudioMute",
+    hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"),
+    { repeating = true, locked = true })
 
 hl.bind("XF86MonBrightnessUp",
     hl.dsp.exec_cmd("swayosd-client --brightness raise"),
@@ -306,16 +306,22 @@ hl.bind("ALT + Z", hl.dsp.exec_cmd("gpu-screen-recorder-ui"))
 
 
 -- Fn6: Touchpad (Code 530)
-hl.bind("XF86TouchpadToggle", hl.dsp.exec_cmd([[notify-send  "mf do you really use this"]]))
-
--- Fn9: Mic Mute (Code 248)
 hl.bind("XF86AudioMicMute", function()
     -- 1. Fire the toggle instantly
     hl.dispatch(hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
 
     -- 2. Pause a tiny fraction of a second for PipeWire to breathe, then sync LED
     hl.dispatch(hl.dsp.exec_cmd("sleep 0.05 && brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0)"))
+
+    hl.dispatch(hl.dsp.exec_cmd([[
+            if wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED'; then
+                swayosd-client --custom-message "🎤 MUTED"
+            else
+                swayosd-client --custom-message "🎤 ON"
+            fi
+        ]]))
 end)
+
 
 -- Fn10: Camera LED (Code 212)
 hl.bind("XF86WebCam", hl.dsp.exec_cmd([[notify-send  "Use physical shutter"]]))
