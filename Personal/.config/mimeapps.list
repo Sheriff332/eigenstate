@@ -1,15 +1,14 @@
 [Default Applications]
-x-scheme-handler/kando=kando.desktop
 text/html=vivaldi-stable.desktop
 x-scheme-handler/http=vivaldi-stable.desktop
 x-scheme-handler/https=vivaldi-stable.desktop
 x-scheme-handler/about=vivaldi-stable.desktop
 x-scheme-handler/unknown=vivaldi-stable.desktop
-text/plain=vscodium-wayland.desktop
-text/x-csrc=vscodium-wayland.desktop
-text/x-python=vscodium-wayland.desktop
-text/x-javascript=vscodium-wayland.desktop
-application/x-shellscript=vscodium-wayland.desktop
+text/plain=dev.zed.Zed.desktop
+text/x-csrc=dev.zed.Zed.desktop
+text/x-python=dev.zed.Zed.desktop
+text/x-javascript=dev.zed.Zed.desktop
+application/x-shellscript=dev.zed.Zed.desktop
 image/jpeg=oculante.desktop
 image/png=oculante.desktop
 image/gif=oculante.desktop
@@ -29,11 +28,11 @@ x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 
 [Added Associations]
-text/plain=vscodium-wayland.desktop;
-text/x-csrc=micro.desktop;vscodium-wayland.desktop;
-text/x-python=micro.desktop;vscodium-wayland.desktop;
-text/x-javascript=micro.desktop;vscodium-wayland.desktop;
-application/x-shellscript=micro.desktop;vscodium-wayland.desktop;
+text/plain=dev.zed.Zed.desktop;
+text/x-csrc=micro.desktop;dev.zed.Zed.desktop;
+text/x-python=micro.desktop;dev.zed.Zed.desktop;
+text/x-javascript=micro.desktop;dev.zed.Zed.desktop;
+application/x-shellscript=micro.desktop;dev.zed.Zed.desktop;
 image/jpeg=helium.desktop;oculante.desktop;
 image/png=helium.desktop;oculante.desktop;
 image/gif=helium.desktop;oculante.desktop;

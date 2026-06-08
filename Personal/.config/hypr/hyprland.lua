@@ -45,6 +45,8 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("udiskie")
     hl.exec_cmd("bw serve")
     hl.exec_cmd("gsr-ui")
+    hl.exec_cmd("~/.local/share/deckboard/deckboard-3.2.0/deckboard --minimized")
+    hl.exec_cmd("brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0)")
 end)
 
 -----------------
@@ -280,7 +282,7 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
--- Vicinae bindings 
+-- Vicinae bindings
 hl.bind("ALT + Space", hl.dsp.exec_cmd("vicinae toggle"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"))
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("vicinae vicinae://launch/wm/switch-windows"))
