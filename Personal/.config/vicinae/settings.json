@@ -30,6 +30,9 @@
       "applications:qalculate-gtk"
    ],
    "providers": {
+      "@KevinBatdorf/store.raycast.steam": {
+         "enabled": false
+      },
       "@jomifepe/store.raycast.bitwarden": {
          "preferences": {
             "fetchFavicons": true,

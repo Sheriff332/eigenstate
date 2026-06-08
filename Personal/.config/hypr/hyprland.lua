@@ -27,7 +27,7 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 ------------------
 hl.monitor({
     output = "",
-    mode = "1920x1080@60",
+    mode = "1920x1080@144",
     position = "auto",
     scale = "1"
 })
@@ -231,7 +231,6 @@ hl.bind(mainMod .. " + X", function()
 end)
 
 -- --- Browser (Vivaldi) ---
--- --- Browser (Vivaldi) ---
 hl.bind(mainMod .. " + B", function()
     -- Must be strictly lowercase to match what hyprctl outputs
     if not is_open("vivaldi-stable") then
@@ -241,6 +240,18 @@ hl.bind(mainMod .. " + B", function()
     end
     hl.dispatch(hl.dsp.workspace.toggle_special("browser"))
 end)
+
+-- --- Games (Steam) ---
+hl.bind(mainMod .. " + G", function()
+    -- Must be strictly lowercase to match what hyprctl outputs
+    if not is_open("steam") then
+        hl.dispatch(hl.dsp.exec_cmd("steam", {
+            workspace = "special:games"
+        }))
+    end
+    hl.dispatch(hl.dsp.workspace.toggle_special("games"))
+end)
+
 
 -- --- Pad (The "Normal" Way) ---
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("pad"))
@@ -289,7 +300,6 @@ hl.bind("ALT + TAB", hl.dsp.exec_cmd("vicinae vicinae://launch/wm/switch-windows
 hl.bind("SUPER + PERIOD", hl.dsp.exec_cmd("vicinae vicinae://launch/core/search-emojis"))
 hl.bind("SUPER + W", hl.dsp.exec_cmd("vicinae vicinae://launch/@sovereign/store.vicinae.awww-switcher/wpgrid"))
 hl.bind("ALT + E", hl.dsp.exec_cmd("vicinae vicinae://launch/files/search"))
-hl.bind(mainMod .." + G", hl.dsp.exec_cmd("xdg-open 'vicinae://launch/@KevinBatdorf/store.raycast.steam/steam'"))
 
 -- Hyprshot
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
