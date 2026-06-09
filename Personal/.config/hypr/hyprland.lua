@@ -10,8 +10,13 @@ local mainMod = "SUPER"
 -------------------------------
 -- Replaces old 'env = ...'
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+
+-- Set Cursor Size and Theme
 hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
+
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 
 -- Environment Variables for GTK/Qt
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
@@ -43,10 +48,10 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("histuid")
     hl.exec_cmd("vicinae server")
     hl.exec_cmd("udiskie")
-    hl.exec_cmd("bw serve")
     hl.exec_cmd("gsr-ui")
     hl.exec_cmd("~/.local/share/deckboard/deckboard-3.2.0/deckboard --minimized")
     hl.exec_cmd("brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0)")
+    hl.exec_once("hyprctl setcursor Bibata-Modern-Ice 24")
 end)
 
 -----------------
