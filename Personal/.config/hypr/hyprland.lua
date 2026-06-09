@@ -51,7 +51,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("gsr-ui")
     hl.exec_cmd("~/.local/share/deckboard/deckboard-3.2.0/deckboard --minimized")
     hl.exec_cmd("brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0)")
-    hl.exec_once("hyprctl setcursor Bibata-Modern-Ice 24")
+    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
 end)
 
 -----------------
@@ -268,7 +268,7 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "e+1" }))
 hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "e-1" }))
 
--- Mouse actions: bindm is replaced by { mou 32se = true } flag
+-- Mouse actions: bindm is replaced by { mouse = true } flag
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
@@ -307,22 +307,38 @@ hl.bind("SUPER + W", hl.dsp.exec_cmd("vicinae vicinae://launch/@sovereign/store.
 hl.bind("ALT + E", hl.dsp.exec_cmd("vicinae vicinae://launch/files/search"))
 
 -- Hyprshot
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region"))
-hl.bind("CONTROL + Print", hl.dsp.exec_cmd("hyprshot -m output --clipboard-only"))
-hl.bind("CONTROL + SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m output"))
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only -z"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region -z"))
+hl.bind("CONTROL + Print", hl.dsp.exec_cmd("hyprshot -m output --clipboard-only -z"))
+hl.bind("CONTROL + SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m output -z"))
 
 
 -- wleave
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("wleave"))
+hl.bind(mainMod .. " + L", function()
+    -- Use a clean shell execution to check if a wleave process is already active
+    local handle = io.popen("pgrep -x wleave")
+    local result = handle:read("*a")
+    handle:close()
+
+    if result ~= "" then
+        -- If wleave is running, kill it instantly to close the menu
+        hl.exec_cmd("pkill -x wleave")
+    else
+        -- If it's not running, launch a fresh instance safely
+        hl.exec_cmd("wleave -x -k")
+    end
+end, { locked = true })
 
 -- --- GPU Screen Recorder Overlay ---
 hl.bind("ALT + Z", hl.dsp.exec_cmd("gpu-screen-recorder-ui"))
 
 -- ASUS stuff
 
+-- Fn6: TouchpadToggle
 
--- Fn6: Touchpad (Code 530)
+hl.bind("XF86TouchpadToggle", hl.dsp.exec_cmd([[notify-send  "mf do you really use this"]]))
+
+-- Fn9: Mic (Code 530)
 hl.bind("XF86AudioMicMute", function()
     -- 1. Fire the toggle instantly
     hl.dispatch(hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))

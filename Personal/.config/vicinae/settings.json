@@ -172,6 +172,11 @@
             "excludedPaths": "",
             "paths": "/home/sheriff/",
             "watcherPaths": ""
+         },
+         "entrypoints": {
+            "rebuild-index": {
+               "enabled": false
+            }
          }
       },
       "font": {

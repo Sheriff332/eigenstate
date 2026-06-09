@@ -24,7 +24,9 @@ synced_files = [
     ".config/starship.toml",
     ".config/systemd/user",
     ".config/vicinae",
+    ".config/wleave",
     ".config/xdg-desktop-portal",
+    ".config/yazi",
     ".config/zed",
     ".config/zellij",
 ]

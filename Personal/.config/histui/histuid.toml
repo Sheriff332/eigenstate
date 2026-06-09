@@ -1,0 +1,78 @@
+# ==============================================================================
+#                      HISTUID DAEMON MAIN CONFIGURATION
+#                     Location: ~/.config/histui/histuid.toml
+# ==============================================================================
+
+[global]
+# The active UI theme pack found in ~/.config/histui/themes/<theme_name>/
+# Bundled alternatives: "default", "minimal", "compact", "detailed", "catppuccin"
+theme = "default"
+
+# Automatically toggle dark/light CSS variants using the system portal preference
+auto_dark_mode = true
+
+# Monitor Mode: set to true if you want histuid to silently log history to the DB
+# without displaying graphical toast popups (e.g. running alongside dunst/mako)
+monitor_mode = false
+
+# Set the operational log level: "debug", "info", "warn", "error"
+log_level = "info"
+
+
+[database]
+# Path to the persistent history store SQLite file
+path = "~/.local/share/histui/history.db"
+
+# Max retention policy. 0 disables pruning (keeps notifications forever)
+max_age_days = 30
+max_entries = 5000
+
+
+[display]
+# Output monitor targeting rules (leave empty for primary focused monitor)
+monitor = ""
+
+# Layout geometry position rules relative to the screen boundaries
+# Options: "top-right", "top-left", "bottom-right", "bottom-left", "top-center", "bottom-center"
+position = "top-right"
+
+# Space buffer away from screen borders in pixels
+margin_x = 20
+margin_y = 20
+
+# Vertical stacking gap spacing separating active popup windows
+spacing = 10
+
+# Max constraint variables for the notification frame layout sizes
+max_width = 450
+max_height = 200
+
+# Cap the maximum number of concurrent visible notifications allowed on screen
+max_visible_popups = 5
+
+
+[timeouts]
+# Global display countdown markers in seconds before an un-dismissed popup fades out
+# 0 means the toast stays persistent until manually cleared
+urgency_low = 5
+urgency_normal = 8
+urgency_critical = 0  # Persistent by default for critical flags
+
+
+[audio]
+# Globally enable or completely disable theme-driven sound effects
+enabled = true
+
+# Target system output sound mixer backend API (usually "alsa")
+backend = "alsa"
+
+# Master volume scalar for notification chimes (0.0 to 1.0)
+volume = 0.8
+
+
+[history]
+# Ignore list: specific applications whose notifications shouldn't get logged to the database
+ignore_apps = [
+    "cava",
+    "some_noisy_script"
+]

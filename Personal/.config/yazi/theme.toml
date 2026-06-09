@@ -1,0 +1,37 @@
+# --- Minimal Functional Theme ---
+
+[mgr]
+border_symbol = "│"
+border_style  = { fg = "gray" }
+
+[filetype]
+rules = [
+    # Directories
+    { url = "*/", fg = "blue" },
+    # Executables
+    { mime = "application/x-executable", fg = "green" },
+    { mime = "application/x-sharedlib", fg = "green" },
+    # Symbolic Links (Must use url = "*" with the filter)
+    { url = "*", is = "link", fg = "cyan" },
+    # Fallback (Required if you want to avoid colorless files)
+    { url = "*", fg = "white" }
+]
+
+[status]
+overall = { fg = "white", bg = "black" }
+perm_read = { fg = "green" }
+perm_write = { fg = "red" }
+perm_exec = { fg = "yellow" }
+
+[mode]
+normal_main = { bg = "blue", fg = "black", bold = true }
+select_main = { bg = "yellow", fg = "black", bold = true }
+unset_main  = { bg = "red", fg = "black", bold = true }
+
+[confirm]
+border = { fg = "red" }
+title  = { fg = "red" }
+
+[input]
+border = { fg = "blue" }
+title  = { fg = "white" }

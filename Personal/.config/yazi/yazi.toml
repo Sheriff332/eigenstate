@@ -1,0 +1,53 @@
+# ==============================================================================
+# 1. DEFINE YOUR REAL APP OPENERS
+# ==============================================================================
+[opener]
+# Universal hook to automatically mirror your true mimeapps.list fallback choices
+system_default = [
+    { run = 'gio open "%s"', desc = "Open with system default" }
+]
+
+# Graphical Applications (using the exact Arch binary names)
+zed = [
+    { run = 'zeditor "%s"', orphan = true, for = "unix" }
+]
+vivaldi = [
+    { run = 'vivaldi-stable "%s"', orphan = true, for = "unix" }
+]
+oculante = [
+    { run = 'oculante "%s"', orphan = true, for = "unix" }
+]
+mpv = [
+    { run = 'mpv "%s"', orphan = true, for = "unix" }
+]
+
+# Terminal Fallback
+micro = [
+    { run = 'micro "%s"', block = true, for = "unix" }
+]
+
+# ==============================================================================
+# 2. BIND FILE PATTERNS PERFECTLY TO YOUR WORKFLOW
+# ==============================================================================
+[open]
+prepend_rules = [
+    # Text, Configs, and Programming Scripts (Drop straight into Zed)
+    { mime = "text/*", use = "zed" },
+    { url = "*.json", use = "zed" },
+    { url = "*.toml", use = "zed" },
+    { url = "*.lua", use = "zed" },
+    { url = "*.sh", use = "zed" },
+    { url = "*.md", use = "zed" },
+
+    # Web Files (Vivaldi Browser)
+    { mime = "text/html", use = "vivaldi-stable" },
+
+    # Images (Oculante)
+    { mime = "image/*", use = "oculante" },
+
+    # Videos (MPV)
+    { mime = "video/*", use = "mpv" },
+
+    # Catch-all: Everything else defaults strictly to your xdg system preferences
+    { url = "*", use = "system_default" }
+]
