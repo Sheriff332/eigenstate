@@ -31,6 +31,8 @@ synced_files = [
     ".config/zed",
     ".config/zellij",
     ".local/bin",
+    ".local/share/fonts",
+    ".local/share/icons",
     "Pictures/wallpapers",
 ]
 
