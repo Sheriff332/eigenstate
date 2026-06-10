@@ -37,5 +37,34 @@ set -gx FZF_ALT_C_COMMAND "fd --type d --hidden --exclude .git --base-directory 
 alias c 'zeditor'
 alias cls 'clear && fastfetch'
 alias weather 'rustormy -m full -c'
+alias youtube 'youtube-tui'
+
+function toohot!
+  set cur (powerprofilesctl get 2>/dev/null)
+  switch $cur
+    case performance
+      powerprofilesctl set balanced; and swayosd-client --custom-message "Set profile: balanced"
+    case balanced
+      powerprofilesctl set power-saver; and swayosd-client --custom-message "Set profile: power-saver"
+    case power-saver powersave power_saver
+      swayosd-client --custom-message "you're cooked lil bro"
+    case '*'
+      swayosd-client --custom-message "Unknown profile: $cur"
+  end
+end
+
+function overclock
+  set cur (powerprofilesctl get 2>/dev/null)
+  switch $cur
+    case power-saver powersave power_saver
+      powerprofilesctl set balanced; and swayosd-client --custom-message "Set profile: balanced"
+    case balanced
+      powerprofilesctl set performance; and swayosd-client --custom-message "Set profile: performance"
+    case performance
+      swayosd-client --custom-message "laptop commited die"
+    case '*'
+      swayosd-client --custom-message "Unknown profile: $cur"
+  end
+end
 
 starship init fish | source

@@ -381,6 +381,29 @@ end)
 -- Fn10: Camera LED (Code 212)
 hl.bind("XF86WebCam", hl.dsp.exec_cmd([[notify-send  "Use physical shutter"]]))
 
+
+
+local game_mode = 0    -- 0 = normal (60Hz + effects), 1 = game (144Hz + minimal effects)
+
+hl.bind(mainMod .. " + SHIFT + G", function()
+  if game_mode == 0 then
+    hl.monitor({ output = "", mode = "1920x1080@144", position = "auto", scale = "1" })
+    game_mode = 1
+  else
+    hl.monitor({ output = "", mode = "1920x1080@60", position = "auto", scale = "1" })
+    game_mode = 0
+  end
+  if game_mode == 1 then
+    hl.notification.create({ text = "Game mode ON — 1920x1080@144; effects disabled", duration = 10000, color = "rgb(1b29a3)", font_size = 20 })
+  else
+    hl.notification.create({ text = "Game mode OFF — 1920x1080@60; effects enabled", duration = 10000, color = "rgb(1b29a3)", font_size = 20 })
+  end
+end)
+
+
+
+
+
 --------------------------------
 ---- WINDOW AND LAYER RULES ----
 --------------------------------
