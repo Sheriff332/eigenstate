@@ -67,4 +67,15 @@ function overclock
   end
 end
 
+function diskard
+    read -l -P "Empty trash? [y/N] " ans
+    if test "$ans" = "y"
+        rm -rf ~/.local/share/Trash/{files,info}/*
+        echo "Trash emptied."
+    else
+        echo "Canceled."
+    end
+end
+
+
 starship init fish | source
