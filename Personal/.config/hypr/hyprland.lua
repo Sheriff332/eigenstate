@@ -51,6 +51,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("gsr-ui")
     hl.exec_cmd("brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0)")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
+    hl.exec_cmd("sudo /home/yourusername/.local/bin/powerdog.sh")
 end)
 
 -----------------

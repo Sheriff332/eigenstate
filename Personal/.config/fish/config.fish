@@ -36,5 +36,6 @@ set -gx FZF_ALT_C_COMMAND "fd --type d --hidden --exclude .git --base-directory 
 
 alias c 'zeditor'
 alias cls 'clear && fastfetch'
+alias weather 'rustormy -m full -c'
 
 starship init fish | source
