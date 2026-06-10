@@ -16,6 +16,7 @@ synced_files = [
     ".config/histui",
     ".config/hypr",
     ".config/kitty",
+    ".config/matugen",
     ".config/mimeapps.list",
     ".config/mpv",
     ".config/nwg-look",
