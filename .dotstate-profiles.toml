@@ -22,6 +22,7 @@ synced_files = [
     ".config/qt6ct",
     ".config/rustormy",
     ".config/starship.toml",
+    ".config/swayosd",
     ".config/systemd/user",
     ".config/vicinae",
     ".config/wleave",
@@ -1268,12 +1269,6 @@ package_name = "oculante"
 binary_name = "oculante"
 
 [[profiles.packages]]
-name = "tty-clock"
-manager = "pacman"
-package_name = "tty-clock"
-binary_name = "tty-clock"
-
-[[profiles.packages]]
 name = "perl"
 manager = "pacman"
 package_name = "perl"
@@ -1494,3 +1489,27 @@ name = "unrar"
 manager = "pacman"
 package_name = "unrar"
 binary_name = "unrar"
+
+[[profiles.packages]]
+name = "impala"
+manager = "pacman"
+package_name = "impala"
+binary_name = "impala"
+
+[[profiles.packages]]
+name = "sgdboop-bin"
+manager = "pacman"
+package_name = "sgdboop-bin"
+binary_name = "sgdboop-bin"
+
+[[profiles.packages]]
+name = "clock-rs-git"
+manager = "pacman"
+package_name = "clock-rs-git"
+binary_name = "clock-rs-git"
+
+[[profiles.packages]]
+name = "github-cli"
+manager = "pacman"
+package_name = "github-cli"
+binary_name = "github-cli"

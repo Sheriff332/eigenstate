@@ -10,11 +10,11 @@
   "ui_font_family": "Monocraft",
   "buffer_font_family": "Monocraft",
   "terminal": {
-    "font_family": "Monocraft"
+    "font_family": "Monocraft",
   },
   "cli_default_open_behavior": "existing_window",
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "base_keymap": "JetBrains",
   "ui_font_size": 16,
@@ -23,5 +23,14 @@
     "mode": "system",
     "light": "Ayu Light",
     "dark": "Ayu Dark",
+  },
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred",
+    "background": "#0f1419cc",
+    "editor.background": "#0f1419cc",
+    "editor.gutter.background": "#0f1419cc",
+    "tab_bar.background": "#0f1419cc",
+    "terminal.background": "#0f1419cc",
+    "panel.background": "#0f1419cc",
   },
 }

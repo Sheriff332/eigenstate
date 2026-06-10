@@ -7,7 +7,7 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 #end
 
 set -gx TERMINAL kitty
-set -gx EDITOR codium
+set -gx EDITOR zeditor
 
 ### --- FZF CONFIGURATION --- ###
 

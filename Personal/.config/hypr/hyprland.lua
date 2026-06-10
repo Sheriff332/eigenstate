@@ -42,14 +42,13 @@ hl.monitor({
 -------------------
 hl.on("hyprland.start", function ()
     hl.exec_cmd("awww-daemon &")
-    hl.exec_cmd("swayosd-server &")
+    hl.exec_cmd("swayosd-server -s ~/.config/swayosd/style.css")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
-    hl.exec_cmd("xhost +SI:localuser:root")
+    hl.exec_cmd("xhost +SI:localuser:root") --This for sudo gui stuff, dont remove plz
     hl.exec_cmd("histuid")
     hl.exec_cmd("vicinae server")
     hl.exec_cmd("udiskie")
     hl.exec_cmd("gsr-ui")
-    hl.exec_cmd("~/.local/share/deckboard/deckboard-3.2.0/deckboard --minimized")
     hl.exec_cmd("brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0)")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
 end)
@@ -70,15 +69,20 @@ hl.config({
 
         resize_on_border = false,
         allow_tearing = false,
-        layout = "dwindle"
+        layout = "scrolling"
     },
 
     dwindle = {
-        preserve_split = true, -- You probably want this
+        preserve_split = true,
     },
 
     scrolling = {
+        direction = "right",
+        column_width = 0.5,
         fullscreen_on_one_column = true,
+        wrap_focus = false,
+        wrap_swapcol = false,
+        explicit_column_widths = "0.333, 0.5, 0.667, 1.0"
     },
 
     decoration = {
@@ -100,43 +104,6 @@ hl.config({
             passes = 1,
             vibrancy = 0.1696
         }
-    },
-
-    animations = {
-        enabled = true, -- Replaces 'yes, please :)'
-        bezier = {
-            "easeOutQuint,   0.23, 1,    0.32, 1",
-            "easeInOutCubic, 0.65, 0.05, 0.36, 1",
-            "linear,         0,    0,    1,    1",
-            "almostLinear,   0.5,  0.5,  0.75, 1",
-            "quick,          0.15, 0,    0.1,  1"
-        },
-        animation = {
-            "global,        1,     10,    default",
-            "border,        1,     5.39,  easeOutQuint",
-            "windows,       1,     4.79,  easeOutQuint",
-            "windowsIn,     1,     4.1,   easeOutQuint, popin 87%",
-            "windowsOut,    1,     1.49,  linear,       popin 87%",
-            "fadeIn,        1,     1.73,  almostLinear",
-            "fadeOut,       1,     1.46,  almostLinear",
-            "fade,          1,     3.03,  quick",
-            "layers,        1,     3.81,  easeOutQuint",
-            "layersIn,      1,     4,     easeOutQuint, fade",
-            "layersOut,     1,     1.5,   linear,       fade",
-            "fadeLayersIn,  1,     1.79,  almostLinear",
-            "fadeLayersOut, 1,     1.39,  almostLinear",
-            "workspaces,    1,     1.94,  almostLinear, fade",
-            "workspacesIn,  1,     1.21,  almostLinear, fade",
-            "workspacesOut, 1,     1.94,  almostLinear, fade",
-            "zoomFactor,    1,     7,     quick",
-            "specialWorkspace, 1,     4,     easeOutQuint, slidevert"
-        }
-    },
-
-
-
-    master = {
-        new_status = "master"
     },
 
     misc = {
@@ -172,6 +139,59 @@ hl.gesture({
     action = "workspace"
 })
 
+-- 1. Enable animations globally
+hl.config({
+    animations = {
+        enabled = true
+    }
+})
+
+-- 2. Define Bezier curves using hl.curve()
+hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1} } })
+hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1} } })
+hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1} } })
+hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1} } })
+hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}  } })
+hl.curve("overshot", { type = "bezier", points = { {0.13, 0.99}, {0.29, 1.1} } })
+
+-- 3. Declare animations using hl.animation()
+hl.animation({ leaf = "global",           enabled = true, speed = 10,   bezier = "default" })
+hl.animation({ leaf = "border",           enabled = true, speed = 5.39, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windows",          enabled = true, speed = 4.79, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windowsIn",        enabled = true, speed = 4.1,  bezier = "easeOutQuint", style = "popin 87%" })
+hl.animation({ leaf = "windowsOut",       enabled = true, speed = 1.49, bezier = "linear",       style = "popin 87%" })
+hl.animation({ leaf = "fadeIn",           enabled = true, speed = 1.73, bezier = "almostLinear" })
+hl.animation({ leaf = "fadeOut",          enabled = true, speed = 1.46, bezier = "almostLinear" })
+hl.animation({ leaf = "fade",             enabled = true, speed = 3.03, bezier = "quick" })
+hl.animation({ leaf = "layers",           enabled = true, speed = 3.81, bezier = "easeOutQuint" })
+hl.animation({ leaf = "layersIn",         enabled = true, speed = 4,    bezier = "easeOutQuint", style = "fade" })
+hl.animation({ leaf = "layersOut",        enabled = true, speed = 1.5,  bezier = "linear",       style = "fade" })
+hl.animation({ leaf = "fadeLayersIn",     enabled = true, speed = 1.79, bezier = "almostLinear" })
+hl.animation({ leaf = "fadeLayersOut",    enabled = true, speed = 1.39, bezier = "almostLinear" })
+hl.animation({ leaf = "workspaces",       enabled = true, speed = 3.8,  bezier = "easeOutQuint", style = "slidevert" })
+hl.animation({ leaf = "workspacesIn",     enabled = true, speed = 3.8,  bezier = "easeOutQuint", style = "slidevert" })
+hl.animation({ leaf = "workspacesOut",    enabled = true, speed = 3.8,  bezier = "easeOutQuint", style = "slidevert" })
+hl.animation({ leaf = "zoomFactor",       enabled = true, speed = 7,    bezier = "quick" })
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 5, bezier = "overshot" })
+
+hl.animation({
+    leaf = "specialWorkspace",
+    enabled = true,
+    speed = 5,
+    bezier = "overshot",
+    style = "slidefadevert -100%"
+})
+
+-- This dims and blurs your active windows when a special workspace is open
+hl.config({
+    decoration = {
+        dim_special = 0.5, -- Range 0.0 to 1.0 (0.5 is a nice cinematic dim)
+        blur = {
+            special = true -- Applies blur to the background
+        }
+    }
+})
+
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
@@ -180,32 +200,48 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))
 
--- Move focus
-hl.bind("SUPER + left", hl.dsp.focus({ direction = "l" }))
-hl.bind("SUPER + right", hl.dsp.focus({ direction = "r" }))
-hl.bind("SUPER + up", hl.dsp.focus({ direction = "u" }))
-hl.bind("SUPER + down", hl.dsp.focus({ direction = "d" }))
+-- Move focus across the horizontal ribbon
+hl.bind("SUPER + left",  hl.dsp.layout("focus l"))
+hl.bind("SUPER + right", hl.dsp.layout("focus r"))
+hl.bind("SUPER + up",    hl.dsp.layout("focus u"))
+hl.bind("SUPER + down",  hl.dsp.layout("focus d"))
 
--- Switch workspaces (Look how easy this is in Lua!)
+-- Switch workspaces (Kept traditional, no vertical stacking)
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+    hl.bind(mainMod .. " + " .. key,         hl.dsp.focus({ workspace = i}))
+    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Replace your old SUPER + T line with these:
+
+-- 1. Cycle Width Presets (33% -> 50% -> 66% -> 100% width)
+hl.bind(mainMod .. " + R", hl.dsp.layout("colresize +conf"))
+hl.bind("SHIFT + mouse:275", hl.dsp.layout("colresize -conf"))
+hl.bind("SHIFT + mouse:276", hl.dsp.layout("colresize +conf"))
+
+-- 2. Maximize / Fit Expand (Instantly blows the window up to fill 100% of the screen)
+hl.bind(mainMod .. " + T", hl.dsp.layout("fit expand"))
+
+-- 3. Equalize Columns (If things get messy, snap all visible windows to equal width)
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.layout("fit visible"))
+
 -- Special Workspaces
--- Helper function to check if a window class is currently open
+-- FIXED: Added defensive nil checking to prevent scrolling layout crashes
 local function is_open(class)
-    for _, w in ipairs(hl.get_windows()) do
-        if w.class == class then return true end
+    local windows = hl.get_windows()
+    if not windows then return false end
+
+    for _, w in ipairs(windows) do
+        if w and w.class and string.lower(w.class) == string.lower(class) then
+            return true
+        end
     end
     return false
 end
 
 -- --- Dash (Zellij) ---
--- Logic: If it doesn't exist, launch it. Then toggle the workspace.
 hl.bind(mainMod .. " + Space", function()
     if not is_open("scratch-dash") then
         hl.dispatch(hl.dsp.exec_cmd("kitty --app-id scratch-dash zellij --layout dashboard", {
@@ -237,7 +273,6 @@ end)
 
 -- --- Browser (Vivaldi) ---
 hl.bind(mainMod .. " + B", function()
-    -- Must be strictly lowercase to match what hyprctl outputs
     if not is_open("vivaldi-stable") then
         hl.dispatch(hl.dsp.exec_cmd("vivaldi-stable", {
             workspace = "special:browser"
@@ -248,7 +283,6 @@ end)
 
 -- --- Games (Steam) ---
 hl.bind(mainMod .. " + G", function()
-    -- Must be strictly lowercase to match what hyprctl outputs
     if not is_open("steam") then
         hl.dispatch(hl.dsp.exec_cmd("steam", {
             workspace = "special:games"
@@ -257,22 +291,25 @@ hl.bind(mainMod .. " + G", function()
     hl.dispatch(hl.dsp.workspace.toggle_special("games"))
 end)
 
-
 -- --- Pad (The "Normal" Way) ---
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("pad"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:pad" }))
 
--- Scroll Workspaces
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "e+1" }))
-hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.layout("focus l"))
+hl.bind(mainMod .. " + mouse_up",   hl.dsp.layout("focus r"))
+hl.bind("mouse:276", hl.dsp.layout("focus l"))
+hl.bind("mouse:275", hl.dsp.layout("focus r"))
 
--- Mouse actions: bindm is replaced by { mouse = true } flag
+hl.bind("SUPER + ALT + mouse_down", hl.dsp.layout("swapcol r"))
+hl.bind("SUPER + ALT + mouse_up",   hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + mouse:276", hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + mouse:275", hl.dsp.layout("swapcol r"))
+
+-- Mouse actions
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Multimedia Keys: bindel -> { repeating = true, locked = true } | bindl -> { locked = true }
+-- Multimedia Keys
 hl.bind("XF86AudioRaiseVolume",
     hl.dsp.exec_cmd("swayosd-client --output-volume raise"),
     { repeating = true, locked = true })
@@ -293,39 +330,35 @@ hl.bind("XF86MonBrightnessDown",
     hl.dsp.exec_cmd("swayosd-client --brightness lower"),
     { repeating = true, locked = true })
 
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),        { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"),   { locked = true })
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"),   { locked = true })
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),    { locked = true })
 
 -- Vicinae bindings
-hl.bind("ALT + Space", hl.dsp.exec_cmd("vicinae toggle"))
-hl.bind("SUPER + V", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"))
-hl.bind("ALT + TAB", hl.dsp.exec_cmd("vicinae vicinae://launch/wm/switch-windows"))
-hl.bind("SUPER + PERIOD", hl.dsp.exec_cmd("vicinae vicinae://launch/core/search-emojis"))
-hl.bind("SUPER + W", hl.dsp.exec_cmd("vicinae vicinae://launch/@sovereign/store.vicinae.awww-switcher/wpgrid"))
-hl.bind("ALT + E", hl.dsp.exec_cmd("vicinae vicinae://launch/files/search"))
+hl.bind("ALT + Space",     hl.dsp.exec_cmd("vicinae toggle"))
+hl.bind("SUPER + V",       hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"))
+hl.bind("ALT + TAB",       hl.dsp.exec_cmd("vicinae vicinae://launch/wm/switch-windows"))
+hl.bind("SUPER + PERIOD",  hl.dsp.exec_cmd("vicinae vicinae://launch/core/search-emojis"))
+hl.bind("SUPER + W",       hl.dsp.exec_cmd("vicinae vicinae://launch/@sovereign/store.vicinae.awww-switcher/wpgrid"))
+hl.bind("ALT + E",         hl.dsp.exec_cmd("vicinae vicinae://launch/files/search"))
 
 -- Hyprshot
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only -z"))
+hl.bind("Print",         hl.dsp.exec_cmd("hyprshot -m region --clipboard-only -z"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region -z"))
-hl.bind("CONTROL + Print", hl.dsp.exec_cmd("hyprshot -m output --clipboard-only -z"))
+hl.bind("CONTROL + Print",       hl.dsp.exec_cmd("hyprshot -m output --clipboard-only -z"))
 hl.bind("CONTROL + SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m output -z"))
-
 
 -- wleave
 hl.bind(mainMod .. " + L", function()
-    -- Use a clean shell execution to check if a wleave process is already active
     local handle = io.popen("pgrep -x wleave")
     local result = handle:read("*a")
     handle:close()
 
     if result ~= "" then
-        -- If wleave is running, kill it instantly to close the menu
         hl.exec_cmd("pkill -x wleave")
     else
-        -- If it's not running, launch a fresh instance safely
-        hl.exec_cmd("wleave -x -k")
+        hl.exec_cmd("wleave -x -k ")
     end
 end, { locked = true })
 
@@ -333,32 +366,20 @@ end, { locked = true })
 hl.bind("ALT + Z", hl.dsp.exec_cmd("gpu-screen-recorder-ui"))
 
 -- ASUS stuff
-
--- Fn6: TouchpadToggle
-
 hl.bind("XF86TouchpadToggle", hl.dsp.exec_cmd([[notify-send  "mf do you really use this"]]))
 
 -- Fn9: Mic (Code 530)
 hl.bind("XF86AudioMicMute", function()
-    -- 1. Fire the toggle instantly
-    hl.dispatch(hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
-
-    -- 2. Pause a tiny fraction of a second for PipeWire to breathe, then sync LED
-    hl.dispatch(hl.dsp.exec_cmd("sleep 0.05 && brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0)"))
-
     hl.dispatch(hl.dsp.exec_cmd([[
-            if wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED'; then
-                swayosd-client --custom-message "🎤 MUTED"
-            else
-                swayosd-client --custom-message "🎤 ON"
-            fi
-        ]]))
+        wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && \
+        sleep 0.04 && \
+        brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0) && \
+        (wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && swayosd-client --custom-message "🎤 MUTED" || swayosd-client --custom-message "🎤 ON")
+    ]]))
 end)
-
 
 -- Fn10: Camera LED (Code 212)
 hl.bind("XF86WebCam", hl.dsp.exec_cmd([[notify-send  "Use physical shutter"]]))
-
 
 --------------------------------
 ---- WINDOW AND LAYER RULES ----
@@ -415,3 +436,21 @@ hl.layer_rule({
 --     border_size = 0,
 --     rounding = 0
 -- })
+
+-- Zed always opens on workspace 1
+hl.window_rule({
+    match = {
+        class = "dev.zed.Zed"
+    },
+    workspace = "1"
+})
+
+-- Oculante floating, centered, pinned
+hl.window_rule({
+    match = {
+        class = "oculante"
+    },
+    float = true,
+    center = true,
+    pin = true
+})

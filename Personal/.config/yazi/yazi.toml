@@ -38,6 +38,11 @@ prepend_rules = [
     { url = "*.lua", use = "zed" },
     { url = "*.sh", use = "zed" },
     { url = "*.md", use = "zed" },
+    { url = "*.css", use = "zed" },
+    { url = "*.rs", use = "zed" },
+    { url = "*.py", use = "zed" },
+    { url = "*.c", use = "zed" },
+    { url = "*.cpp", use = "zed" },
 
     # Web Files (Vivaldi Browser)
     { mime = "text/html", use = "vivaldi-stable" },
