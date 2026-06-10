@@ -5,6 +5,8 @@ local terminal = "kitty"
 local fileManager = "kitty -e yazi"
 local mainMod = "SUPER"
 
+local colors = require("colors")
+
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
@@ -64,8 +66,8 @@ hl.config({
         border_size = 2,
 
         -- Keys with dots in Lua must be wrapped in brackets
-        ["col.active_border"] = "rgba(33ccffee)", "rgba(00ff99ee)", "45deg",
-        ["col.inactive_border"] = "rgba(595959aa)",
+        ["col.active_border"] = colors.active_border,
+        ["col.inactive_border"] = colors.inactive_border,
 
         resize_on_border = false,
         allow_tearing = false,
@@ -95,7 +97,7 @@ hl.config({
             enabled = true,
             range = 4,
             render_power = 3,
-            color = "rgba(1a1a1aee)"
+            color = colors.shadow_color
         },
 
         blur = {

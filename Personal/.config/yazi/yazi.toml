@@ -35,6 +35,8 @@ prepend_rules = [
     { mime = "text/*", use = "zed" },
     { url = "*.json", use = "zed" },
     { url = "*.toml", use = "zed" },
+    { url = "*.yaml", use = "zed" },
+    { url = "*.conf", use = "zed" },
     { url = "*.lua", use = "zed" },
     { url = "*.sh", use = "zed" },
     { url = "*.md", use = "zed" },
@@ -43,6 +45,7 @@ prepend_rules = [
     { url = "*.py", use = "zed" },
     { url = "*.c", use = "zed" },
     { url = "*.cpp", use = "zed" },
+    { url = "*.go", use = "zed" },
 
     # Web Files (Vivaldi Browser)
     { mime = "text/html", use = "vivaldi-stable" },
