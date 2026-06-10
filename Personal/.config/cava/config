@@ -11,7 +11,7 @@
 ; mode = normal
 
 # Accepts only non-negative values.
-; framerate = 60
+; framerate = 30
 
 # 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = off
 # new as of 0.6.0 autosens of low values (dynamic range)
@@ -21,11 +21,11 @@
 
 # Manual sensitivity in %. If autosens is enabled, this will only be the initial value.
 # 200 means double height. Accepts only non-negative values.
-; sensitivity = 100
+; sensitivity = 20
 
 # The number of bars (0-512). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-; bars = 0
+; bars = 16
 ; bar_width = 2
 ; bar_spacing = 1
 # bar_height is only used for output in "noritake" format
@@ -56,7 +56,7 @@
 
 # Seconds with no input before cava goes to sleep mode. Cava will not perform FFT or drawing and
 # only check for input once per second. Cava will wake up once input is detected. 0 = disable.
-; sleep_timer = 0
+; sleep_timer = 2
 
 
 [input]
@@ -88,32 +88,8 @@
 # For jack 'source' will be the name of the JACK server to connect to, e.g. 'foobar'. Default: 'default'.
 # README.md contains further information on how to setup CAVA for JACK.
 #
-; method = pulse
-; source = auto
 
-; method = pipewire
-; source = auto
-
-; method = alsa
-; source = hw:Loopback,1
-
-; method = fifo
-; source = /tmp/mpd.fifo
-
-; method = shmem
-; source = /squeezelite-AA:BB:CC:DD:EE:FF
-
-; method = portaudio
-; source = auto
-
-; method = sndio
-; source = default
-
-; method = oss
-; source = /dev/dsp
-
-; method = jack
-; source = default
+method = pipewire
 
 # The options 'sample_rate', 'sample_bits', 'channels' and 'autoconnect' can be configured for some input methods:
 #   sample_rate: fifo, pipewire, sndio, oss
@@ -136,7 +112,7 @@
 #
 ; sample_rate = 44100
 ; sample_bits = 16
-; channels = 2
+; channels = 1
 ; autoconnect = 2
 ; active = 1
 ; remix = 1
@@ -162,6 +138,7 @@
 # 'sdl_glsl' uses SDL to create an OpenGL context. Write your own shaders or
 # use one of the predefined ones.
 ; method = noncurses
+; channels = mono
 
 # Orientation of the visualization. Can be 'bottom', 'top', 'left', 'right' or
 # 'horizontal'. Default is 'bottom'. 'left and 'right' are only supported on sdl
@@ -315,7 +292,7 @@
 # Noise reduction, int 0 - 100. default 77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 100 will be very slow and smooth, 0 will be fast but noisy.
-; noise_reduction = 77
+; noise_reduction = 50
 
 
 [eq]
