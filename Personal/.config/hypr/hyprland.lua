@@ -5,8 +5,6 @@ local terminal = "kitty"
 local fileManager = "kitty -e yazi"
 local mainMod = "SUPER"
 
-local colors = require("colors")
-
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
@@ -66,9 +64,8 @@ hl.config({
         border_size = 2,
 
         -- Keys with dots in Lua must be wrapped in brackets
-        ["col.active_border"] = colors.active_border,
-        ["col.inactive_border"] = colors.inactive_border,
-
+        ["col.active_border"] = { colors = {"rgba(f4f59cff)", "rgba(f4f2ccff)"}, angle = 45 },
+        ["col.inactive_border"] = "rgba(48473eaa)",
         resize_on_border = false,
         allow_tearing = false,
         layout = "scrolling"
@@ -97,7 +94,7 @@ hl.config({
             enabled = true,
             range = 4,
             render_power = 3,
-            color = colors.shadow_color
+            color = "rgba(000000ee)"
         },
 
         blur = {
@@ -184,10 +181,9 @@ hl.animation({
     style = "slidefadevert -100%"
 })
 
--- This dims and blurs your active windows when a special workspace is open
+-- This blurs your active windows when a special workspace is open
 hl.config({
     decoration = {
-        dim_special = 0.5, -- Range 0.0 to 1.0 (0.5 is a nice cinematic dim)
         blur = {
             special = true -- Applies blur to the background
         }

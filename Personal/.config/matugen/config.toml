@@ -26,5 +26,5 @@ post_hook = "pkill -USR1 kitty"
 
 [templates.hyprland]
 input_path = "~/.config/matugen/templates/hyprland.lua"
-output_path = "~/.config/hypr/colors.lua"
+output_path = "~/.config/hypr/hyprland.lua"
 post_hook = "hyprctl reload"
