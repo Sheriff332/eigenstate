@@ -7,7 +7,6 @@ synced_files = []
 name = "Personal"
 synced_files = [
     ".config/bottom",
-    ".config/btop",
     ".config/cava",
     ".config/fastfetch",
     ".config/fish",
@@ -25,7 +24,9 @@ synced_files = [
     ".config/starship.toml",
     ".config/swayosd",
     ".config/systemd/user",
+    ".config/vesktop/themes",
     ".config/vicinae",
+    ".config/vivaldi/UserCSS",
     ".config/wleave",
     ".config/xdg-desktop-portal",
     ".config/yazi",
