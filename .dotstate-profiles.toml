@@ -4,7 +4,7 @@ version = 2
 synced_files = []
 
 [[profiles]]
-name = "eigenstatev1"
+name = "Personal"
 synced_files = [
     ".config/bottom",
     ".config/btop",
