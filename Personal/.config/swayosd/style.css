@@ -2,8 +2,8 @@
 window#osd {
     padding: 12px 24px;
     border-radius: 12px;
-    border: 1px solid #ffebf1; /* Using your outline color for a clean border */
-    background: #191114;       /* Dark grey background matching kitty */
+    border: 1px solid #f3f0de; /* Using your outline color for a clean border */
+    background: #14140c;       /* Dark grey background matching kitty */
 }
 
 /* Brightness/Volume Icons and Text Strings */
@@ -16,11 +16,11 @@ label {
 progressbar trough {
     min-height: 6px;
     border-radius: 999px;
-    background: #42393c; /* Slightly lighter grey for the track */
+    background: #3c3c33; /* Slightly lighter grey for the track */
 }
 
 /* The active, filled section of the progress bar */
 progressbar progress {
     border-radius: 999px;
-    background: #ffebf1;       /* Vibrant accent color for the actual volume/brightness level */
+    background: #f4f59c;       /* Vibrant accent color for the actual volume/brightness level */
 }
