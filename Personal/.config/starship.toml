@@ -1,15 +1,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](#e4f1ff)\
+[](#ffebf1)\
 $os\
 $username\
-[](bg:#e4f1ff fg:#e4f1ff)\
+[](bg:#ffebf1 fg:#ffebf1)\
 $directory\
-[](fg:#e4f1ff bg:#f6ecff)\
+[](fg:#ffebf1 bg:#ffece3)\
 $git_branch\
 $git_status\
-[](fg:#f6ecff bg:#cae6ff)\
+[](fg:#ffece3 bg:#ffd8e7)\
 $c\
 $elixir\
 $elm\
@@ -22,26 +22,26 @@ $nodejs\
 $nim\
 $rust\
 $scala\
-[](fg:#cae6ff bg:#d3e5f5)\
+[](fg:#ffd8e7 bg:#fed9e7)\
 $docker_context\
-[](fg:#d3e5f5 bg:#ebddff)\
+[](fg:#fed9e7 bg:#ffdbc7)\
 $time\
-[ ](fg:#ebddff)\
+[ ](fg:#ffdbc7)\
 """
 
 [username]
 show_always = true
-style_user = "bg:#e4f1ff fg:#000000"
-style_root = "bg:#e4f1ff fg:#000000"
+style_user = "bg:#ffebf1 fg:#000000"
+style_root = "bg:#ffebf1 fg:#000000"
 format = '[$user ]($style)'
 disabled = false
 
 [os]
-style = "bg:#e4f1ff fg:#000000"
+style = "bg:#ffebf1 fg:#000000"
 disabled = true
 
 [directory]
-style = "bg:#e4f1ff fg:#000000"
+style = "bg:#ffebf1 fg:#000000"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -54,84 +54,84 @@ truncation_symbol = "…/"
 
 [c]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [cpp]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [docker_context]
 symbol = " "
-style = "bg:#d3e5f5 fg:#000000"
+style = "bg:#fed9e7 fg:#000000"
 format = '[ $symbol $context ]($style)'
 
 [elixir]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [elm]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:#f6ecff fg:#000000"
+style = "bg:#ffece3 fg:#000000"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#f6ecff fg:#000000"
+style = "bg:#ffece3 fg:#000000"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [julia]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [nim]
 symbol = "󰆥 "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [scala]
 symbol = " "
-style = "bg:#cae6ff fg:#000000"
+style = "bg:#ffd8e7 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:#ebddff fg:#000000"
+style = "bg:#ffdbc7 fg:#000000"
 format = '[ ♥ $time ]($style)'

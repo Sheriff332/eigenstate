@@ -26,6 +26,10 @@ micro = [
     { run = 'micro "%s"', block = true, for = "unix" }
 ]
 
+extract = [
+	{ run = 'ouch decompress "$@" --yes', desc = "Extract here" }
+]
+
 # ==============================================================================
 # 2. BIND FILE PATTERNS PERFECTLY TO YOUR WORKFLOW
 # ==============================================================================
@@ -58,6 +62,18 @@ prepend_rules = [
     # Videos (MPV)
     { mime = "video/*", use = "mpv" },
 
+    # Extract Files (Ouch)
+    { mime = "application/zip", use = [ "extract", "reveal" ] },
+    { mime = "application/x-tar", use = [ "extract", "reveal" ] },
+    { mime = "application/x-bzip2", use = [ "extract", "reveal" ] },
+    { mime = "application/x-7z-compressed", use = [ "extract", "reveal" ] },
+    { mime = "application/x-rar", use = [ "extract", "reveal" ] },
+    { mime = "application/x-xz", use = [ "extract", "reveal" ] },
+
     # Catch-all: Everything else defaults strictly to your xdg system preferences
     { url = "*", use = "system_default" }
 ]
+
+[[plugin.prepend_previewers]]
+mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
+run  = "ouch"

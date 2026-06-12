@@ -1,30 +1,13 @@
-# Combine Enter and Directory Browsing safely
-[[manager.prepend_keymap]]
-on   = [ "l" ]
-run  = "plugin smart-enter"
-desc = "Enter a directory or open a file contextually"
-
-[[manager.prepend_keymap]]
-on   = [ "<Enter>" ]
-run  = "plugin smart-enter"
-desc = "Enter a directory or open a file contextually"
-
-[[manager.prepend_keymap]]
-on   = ["F", "G"]
-run  = "plugin yafg"
-desc = "yafg: grep and fuzzy find"
-
-[[manager.prepend_keymap]]
-on   = "y"
-run  = ["yank", "plugin clipboard -- --action=copy"]
-desc = "Copy to system clipboard"
-
-[[manager.prepend_keymap]]
-on   = "<C-p>"
-run  = ["plugin clipboard -- --action=paste"]
-desc = "Paste from system clipboard"
-
-[[manager.prepend_keymap]]
-on   = ["C"]
-run  = "plugin ouch"
+[[mgr.prepend_keymap]]
+on = ["C"]
+run = "plugin ouch"
 desc = "Compress with ouch"
+
+[[mgr.append_keymap]]
+on = "q"
+run = "plugin autosession --save-and-quit"
+
+[[mgr.prepend_keymap]]
+on = "<C-y>"
+run = ["plugin wl-clipboard"]
+desc = "Copy to clipboard"

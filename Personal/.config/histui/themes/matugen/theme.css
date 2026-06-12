@@ -1,13 +1,13 @@
 /* Define Matugen Colors */
-@define-color bg_color rgba(rgb(28, 32, 36), 0.75); /* bf opacity */
+@define-color bg_color rgba(rgb(37, 29, 32), 0.75); /* bf opacity */
 @define-color fg_color #ffffff;
 @define-color fg_muted #ffffff;
-@define-color primary #e4f1ff;
-@define-color secondary #e4f1ff;
-@define-color border_color #bdc3ca;
+@define-color primary #ffebf1;
+@define-color secondary #ffebf1;
+@define-color border_color #d0bec4;
 
-@define-color urgency_low #f6ecff;
-@define-color urgency_normal #e4f1ff;
+@define-color urgency_low #ffece3;
+@define-color urgency_normal #ffebf1;
 @define-color urgency_critical #ffece9;
 
 /* Force Monocraft font onto literally everything inside the popup */
@@ -40,7 +40,7 @@
 
 /* 3. Clickable Action Indicator (From Docs) */
 .notification-popup.has-default-action {
-    --indicator-color: rgba(rgb(228, 241, 255), 0.35);
+    --indicator-color: rgba(rgb(255, 235, 241), 0.35);
     box-shadow: inset -20px 0 16px -12px var(--indicator-color);
 }
 .notification-popup.is-clickable:hover {
@@ -98,7 +98,7 @@
 }
 
 .notification-progress trough {
-    background-color: #41474d;
+    background-color: #504348;
     border-radius: 0px;
 }
 
