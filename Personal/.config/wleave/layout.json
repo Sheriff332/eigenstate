@@ -1,4 +1,5 @@
 {
+  "css": "/home/sheriff/.config/wleave/style.css",
   "buttons": [
     {
       "label": "lock",

@@ -1,0 +1,31 @@
+/* The entire screen overlay background */
+window {
+    background-color: {{ colors.surface.dark.hex }}cc; /* 80% opacity matching Zed/Kitty */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Base button styling - completely sharp-edged with no borders */
+button {
+    border: none;
+    border-radius: 0px;
+    box-shadow: none; /* Strips any default GTK/Libadwaita button shadows */
+    background-color: {{ colors.surface_container_high.dark.hex }};
+    color: {{ colors.on_surface.dark.hex }};
+    transition: all 0.15s ease-in-out;
+}
+
+/* Hover & Active States */
+button:hover {
+    background-color: {{ colors.primary_container.dark.hex }};
+    color: {{ colors.on_primary_container.dark.hex }};
+}
+
+button:active {
+    background-color: {{ colors.secondary_container.dark.hex }};
+}
+
+/* Shutdown highlight override */
+#shutdown:hover {
+    background-color: {{ colors.error_container.dark.hex }};
+    color: {{ colors.on_error_container.dark.hex }};
+}

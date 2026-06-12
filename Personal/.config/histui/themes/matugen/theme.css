@@ -1,0 +1,108 @@
+/* Define Matugen Colors */
+@define-color bg_color rgba(rgb(28, 32, 36), 0.75); /* bf opacity */
+@define-color fg_color #ffffff;
+@define-color fg_muted #ffffff;
+@define-color primary #e4f1ff;
+@define-color secondary #e4f1ff;
+@define-color border_color #bdc3ca;
+
+@define-color urgency_low #f6ecff;
+@define-color urgency_normal #e4f1ff;
+@define-color urgency_critical #ffece9;
+
+/* Force Monocraft font onto literally everything inside the popup */
+.notification-popup * {
+    font-family: "Monocraft", monospace;
+}
+
+/* 1. Base Container */
+.notification-popup {
+    background-color: @bg_color;
+    border: 2px solid @border_color;
+    border-radius: 0px; /* Blocky terminal style */
+    padding: 12px;
+    margin: 4px;
+    box-shadow: none;
+}
+
+/* Defeat histui's built-in stack corner-rounding */
+.notification-popup.stack-first,
+.notification-popup.stack-middle,
+.notification-popup.stack-last,
+.notification-popup.stack-single {
+    border-radius: 0px;
+}
+
+/* 2. Urgency Borders */
+.notification-popup.urgency-low { border-color: @urgency_low; }
+.notification-popup.urgency-normal { border-color: @urgency_normal; }
+.notification-popup.urgency-critical { border-color: @urgency_critical; }
+
+/* 3. Clickable Action Indicator (From Docs) */
+.notification-popup.has-default-action {
+    --indicator-color: rgba(rgb(228, 241, 255), 0.35);
+    box-shadow: inset -20px 0 16px -12px var(--indicator-color);
+}
+.notification-popup.is-clickable:hover {
+    cursor: pointer;
+    border-color: @primary;
+}
+
+/* 4. Text Elements */
+.notification-summary {
+    color: @primary;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.notification-appname {
+    color: @secondary;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: lowercase; /* Makes it look more terminal-y */
+}
+
+.notification-timestamp {
+    color: @fg_muted;
+    font-size: 11px;
+}
+
+.notification-body {
+    color: @fg_color;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* 5. Action Buttons */
+.notification-actions {
+    margin-top: 8px;
+}
+
+.notification-action {
+    background-color: transparent;
+    color: @primary;
+    border: 1px solid @border_color;
+    border-radius: 0px; /* Blocky buttons */
+    padding: 4px 12px;
+}
+
+.notification-action:hover {
+    background-color: @primary;
+    color: #000000;
+    border-color: @primary;
+}
+
+/* 6. Progress Bars */
+.notification-progress {
+    margin-top: 8px;
+}
+
+.notification-progress trough {
+    background-color: #41474d;
+    border-radius: 0px;
+}
+
+.notification-progress trough > progress {
+    background-color: @primary;
+    border-radius: 0px;
+}

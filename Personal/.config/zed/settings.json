@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Material Icon Theme",
   "ui_font_family": "Monocraft",
   "buffer_font_family": "Monocraft",
   "terminal": {
@@ -22,15 +23,6 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Ayu Dark",
-  },
-  "experimental.theme_overrides": {
-    "background.appearance": "blurred",
-    "background": "#0f1419cc",
-    "editor.background": "#0f1419cc",
-    "editor.gutter.background": "#0f1419cc",
-    "tab_bar.background": "#0f1419cc",
-    "terminal.background": "#0f1419cc",
-    "panel.background": "#0f1419cc",
+    "dark": "matugenisluv Dark",
   },
 }

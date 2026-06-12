@@ -1,0 +1,123 @@
+# Vicinae Matugen Theme Template
+# Perfectly flat, sharp-edged variation matching terminal grids
+
+[meta]
+name = "Matugen"
+description = "goofy goober theme for vicinae"
+variant = "{{mode}}"
+
+# ============================================================================
+# Core Colors (Strictly Flat Canvas)
+# ============================================================================
+
+[colors.core]
+accent = "{{colors.primary.default.hex}}"
+accent_foreground = "{{colors.on_primary.default.hex}}"
+background = "{{colors.surface.default.hex}}"
+foreground = "{{colors.on_surface.default.hex}}"
+secondary_background = "{{colors.surface_container_high.default.hex}}" # Matched to terminal color0
+border = "{{colors.surface_container.default.hex}}" # Blends borders out completely for a flat look
+
+# ============================================================================
+# Window Borders (Zero Contrast Framing)
+# ============================================================================
+
+[colors.main_window]
+border = "{{colors.surface.default.hex}}" # Hides outer window framing lines
+
+[colors.settings_window]
+border = "{{colors.outline_variant.default.hex}}"
+
+# ============================================================================
+# Accent Palette (Vibrant TUI Match)
+# ============================================================================
+
+[colors.accents]
+blue = "{{colors.secondary.default.hex}}"
+green = "{{colors.primary.default.hex}}"
+magenta = "{{colors.primary_fixed.default.hex}}"
+orange = "{{colors.error.default.hex}}"
+red = "{{colors.error.default.hex}}"
+yellow = "{{colors.tertiary.default.hex}}" # Fixed mapping to match color3
+cyan = "{{colors.secondary_fixed.default.hex}}"
+purple = "{{colors.primary_fixed_dim.default.hex}}"
+
+# ============================================================================
+# Text System
+# ============================================================================
+
+[colors.text]
+default = "{{colors.on_surface.default.hex}}"
+muted = "{{colors.on_surface_variant.default.hex}}"
+danger = "{{colors.error.default.hex}}"
+success = "{{colors.primary.default.hex}}"
+placeholder = { name = "{{colors.on_surface_variant.default.hex}}", opacity = 0.5 }
+
+[colors.text.selection]
+background = "{{colors.secondary.default.hex}}" # Aligned with your Kitty config
+foreground = "{{colors.on_secondary.default.hex}}"
+
+[colors.text.links]
+default = "{{colors.primary.default.hex}}"
+visited = { name = "{{colors.tertiary.default.hex}}", darker = 15 }
+
+# ============================================================================
+# Input Fields
+# ============================================================================
+
+[colors.input]
+border = "{{colors.surface_container_highest.default.hex}}" # Flat block styling
+border_focus = "{{colors.primary.default.hex}}"
+border_error = "{{colors.error.default.hex}}"
+
+# ============================================================================
+# Flat Buttons
+# ============================================================================
+
+[colors.button.primary]
+background = "{{colors.surface_container_high.default.hex}}"
+foreground = "{{colors.on_surface.default.hex}}"
+
+[colors.button.primary.hover]
+background = "{{colors.surface_container_highest.default.hex}}"
+
+[colors.button.primary.focus]
+outline = "{{colors.surface_container_highest.default.hex}}" # No flashing focus rings
+
+# ============================================================================
+# Hard-Edged Selection Lists
+# ============================================================================
+
+[colors.list.item.hover]
+background = { name = "{{colors.primary_container.default.hex}}", opacity = 0.20 }
+foreground = "{{colors.on_surface.default.hex}}"
+
+[colors.list.item.selection]
+background = "{{colors.secondary_container.default.hex}}"
+foreground = "{{colors.on_secondary_container.default.hex}}"
+secondary_background = "{{colors.surface_container_high.default.hex}}"
+secondary_foreground = "{{colors.on_surface_variant.default.hex}}"
+
+# ============================================================================
+# Grid Items
+# ============================================================================
+
+[colors.grid.item]
+background = "{{colors.surface_container.default.hex}}"
+
+[colors.grid.item.hover]
+outline = { name = "{{colors.secondary.default.hex}}", opacity = 0.6 }
+
+[colors.grid.item.selection]
+outline = { name = "{{colors.primary.default.hex}}" }
+
+# ============================================================================
+# Utilities
+# ============================================================================
+
+[colors.scrollbars]
+background = { name = "{{colors.surface_container_highest.default.hex}}", opacity = 0.4 }
+
+[colors.loading]
+bar = "{{colors.primary.default.hex}}"
+spinner = "{{colors.primary.default.hex}}"

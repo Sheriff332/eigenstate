@@ -46,9 +46,11 @@ prepend_rules = [
     { url = "*.c", use = "zed" },
     { url = "*.cpp", use = "zed" },
     { url = "*.go", use = "zed" },
+    { url = "*.jsonc", use = "zed" },
 
     # Web Files (Vivaldi Browser)
     { mime = "text/html", use = "vivaldi-stable" },
+    { mime = "application/pdf", use = "vivaldi-stable" },
 
     # Images (Oculante)
     { mime = "image/*", use = "oculante" },

@@ -3,10 +3,13 @@
 #                     Location: ~/.config/histui/histuid.toml
 # ==============================================================================
 
+[theme]
+name = "matugen"
+
 [global]
 # The active UI theme pack found in ~/.config/histui/themes/<theme_name>/
 # Bundled alternatives: "default", "minimal", "compact", "detailed", "catppuccin"
-theme = "default"
+theme = "matugen"
 
 # Automatically toggle dark/light CSS variants using the system portal preference
 auto_dark_mode = true

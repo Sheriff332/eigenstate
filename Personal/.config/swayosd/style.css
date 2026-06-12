@@ -1,22 +1,26 @@
+/* The SwayOSD window container */
 window#osd {
     padding: 12px 24px;
-    border-radius: 10px;
-    border: 1px solid #2d3139;
-    background: rgba(15, 20, 25, 0.95);
+    border-radius: 12px;
+    border: 1px solid #ebf0f8; /* Using your outline color for a clean border */
+    background: #101417;       /* Dark grey background matching kitty */
 }
 
+/* Brightness/Volume Icons and Text Strings */
 image,
 label {
-    color: #e6b450;
+    color: #ffffff;        /* High-contrast text/icon color */
 }
 
+/* The empty/unfilled container slot of the progress bar */
 progressbar trough {
     min-height: 6px;
-    border-radius: 0px;
-    background: #1c232b;
+    border-radius: 999px;
+    background: #383c40; /* Slightly lighter grey for the track */
 }
 
+/* The active, filled section of the progress bar */
 progressbar progress {
-    border-radius: 0px;
-    background: #ffcc66;
+    border-radius: 999px;
+    background: #e4f1ff;       /* Vibrant accent color for the actual volume/brightness level */
 }

@@ -49,8 +49,9 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("vicinae server")
     hl.exec_cmd("udiskie")
     hl.exec_cmd("gsr-ui")
-    hl.exec_cmd("brightnessctl -d 'platform::micmute' set $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo 1 || echo 0)")
+    hl.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1 && brightnessctl -d 'platform::micmute' set 1")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
+    hl.exec_cmd("powerprofilesctl set power-saver")
 end)
 
 -----------------
