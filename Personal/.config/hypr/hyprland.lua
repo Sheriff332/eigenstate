@@ -43,13 +43,9 @@ hl.monitor({
 hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon &")
     hl.exec_cmd("swayosd-server -s ~/.config/swayosd/style.css")
-    hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("xhost +SI:localuser:root") --This for sudo gui stuff, dont remove plz
-    hl.exec_cmd("histuid")
-    hl.exec_cmd("vicinae server")
     hl.exec_cmd("udiskie")
     hl.exec_cmd("gsr-ui")
-    hl.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1 && brightnessctl -d 'platform::micmute' set 1")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
     hl.exec_cmd("powerprofilesctl set power-saver")
 end)
@@ -65,8 +61,8 @@ hl.config({
         border_size = 2,
 
         -- Keys with dots in Lua must be wrapped in brackets
-        ["col.active_border"] = { colors = { "rgba(ffebf1ff)", "rgba(ffebf1ff)" }, angle = 45 },
-        ["col.inactive_border"] = "rgba(4e4448aa)",
+        ["col.active_border"] = { colors = { "rgba(dbf4ffff)", "rgba(dcf4feff)" }, angle = 45 },
+        ["col.inactive_border"] = "rgba(42484aaa)",
         resize_on_border = false,
         allow_tearing = false,
         layout = "scrolling"
@@ -392,11 +388,21 @@ hl.bind(mainMod .. " + SHIFT + G", function()
         game_mode = 0
     end
     if game_mode == 1 then
-        hl.notification.create({ text = "Game mode ON — 1920x1080@144; effects disabled", duration = 10000, color =
-        "rgb(1b29a3)", font_size = 20 })
+        hl.notification.create({
+            text = "Game mode ON — 1920x1080@144; effects disabled",
+            duration = 10000,
+            color =
+            "rgb(1b29a3)",
+            font_size = 20
+        })
     else
-        hl.notification.create({ text = "Game mode OFF — 1920x1080@60; effects enabled", duration = 10000, color =
-        "rgb(1b29a3)", font_size = 20 })
+        hl.notification.create({
+            text = "Game mode OFF — 1920x1080@60; effects enabled",
+            duration = 10000,
+            color =
+            "rgb(1b29a3)",
+            font_size = 20
+        })
     end
 end)
 

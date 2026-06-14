@@ -63,15 +63,9 @@ urgency_critical = 0  # Persistent by default for critical flags
 
 
 [audio]
-# Globally enable or completely disable theme-driven sound effects
 enabled = true
-
-# Target system output sound mixer backend API (usually "alsa")
 backend = "alsa"
-
-# Master volume scalar for notification chimes (0.0 to 1.0)
 volume = 0.8
-
 
 [history]
 # Ignore list: specific applications whose notifications shouldn't get logged to the database

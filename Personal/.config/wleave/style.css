@@ -1,6 +1,6 @@
 /* The entire screen overlay background */
 window {
-    background-color: #191114cc; /* 80% opacity matching Zed/Kitty */
+    background-color: #0f1416cc; /* 80% opacity matching Zed/Kitty */
     transition: all 0.2s ease-in-out;
 }
 
@@ -9,19 +9,19 @@ button {
     border: none;
     border-radius: 0px;
     box-shadow: none; /* Strips any default GTK/Libadwaita button shadows */
-    background-color: #42393c;
+    background-color: #373c3f;
     color: #ffffff;
     transition: all 0.15s ease-in-out;
 }
 
 /* Hover & Active States */
 button:hover {
-    background-color: #f9accf;
+    background-color: #84cde7;
     color: #000000;
 }
 
 button:active {
-    background-color: #dcb9c7;
+    background-color: #afc6d0;
 }
 
 /* Shutdown highlight override */

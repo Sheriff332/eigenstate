@@ -1,0 +1,25 @@
+# Theme Metadata
+name = "My Theme"
+description = "A custom notification theme with sounds"
+author = "Your Name"
+version = "1.0.0"
+
+# Icon Configuration
+[icon]
+size = 48    # Default icon size in pixels
+
+# Audio Configuration
+[audio.low]
+path = "sounds/minecraft-xp-sound.mp3"
+volume = 1.0
+repeat_count = -1
+
+[audio.normal]
+path = "sounds/minecraft-xp-sound.mp3"
+volume = 1.0
+repeat_count = -1
+
+[audio.critical]
+path = "sounds/minecraft-xp-sound.mp3"
+volume = 1.0
+repeat_count = -1
