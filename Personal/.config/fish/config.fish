@@ -40,31 +40,43 @@ alias weather 'rustormy -m full -c'
 alias youtube 'youtube-tui'
 
 function toohot!
-  set cur (powerprofilesctl get 2>/dev/null)
-  switch $cur
-    case performance
-      powerprofilesctl set balanced; and swayosd-client --custom-message "Set profile: balanced"
-    case balanced
-      powerprofilesctl set power-saver; and swayosd-client --custom-message "Set profile: power-saver"
-    case power-saver powersave power_saver
-      swayosd-client --custom-message "you're cooked lil bro"
-    case '*'
-      swayosd-client --custom-message "Unknown profile: $cur"
-  end
+    # 1. Kill Boost immediately
+    echo 0 | sudo tee /sys/devices/system/cpu/cpufreq/boost > /dev/null
+
+    # 2. Get the active profile
+    # We use awk to grab the 3rd word from the line "Active profile: Balanced"
+    set -l cur (asusctl profile get | awk '/Active profile:/ {print $3}')
+
+    switch $cur
+        case Performance
+            asusctl profile set Balanced
+            swayosd-client --custom-message "Cooling Down: Balanced"
+        case Balanced
+            asusctl profile set Quiet
+            swayosd-client --custom-message "Cooling Down: Quiet"
+        case Quiet
+            swayosd-client --custom-message "you're cooked lil bro (At Min)"
+    end
 end
 
 function overclock
-  set cur (powerprofilesctl get 2>/dev/null)
-  switch $cur
-    case power-saver powersave power_saver
-      powerprofilesctl set balanced; and swayosd-client --custom-message "Set profile: balanced"
-    case balanced
-      powerprofilesctl set performance; and swayosd-client --custom-message "Set profile: performance"
-    case performance
-      swayosd-client --custom-message "laptop commited die"
-    case '*'
-      swayosd-client --custom-message "Unknown profile: $cur"
-  end
+    # Get current active profile
+    set -l cur (asusctl profile get | awk '/Active profile:/ {print $3}')
+
+    switch $cur
+        case Quiet
+            asusctl profile set Balanced
+            swayosd-client --custom-message "Profile: Balanced"
+        case Balanced
+            # Set hardware to Performance but keep software Boost OFF
+            asusctl profile set Performance
+            echo 0 | sudo tee /sys/devices/system/cpu/cpufreq/boost > /dev/null
+            swayosd-client --custom-message "Performance: Boost OFF (Safe Speed)"
+        case Performance
+            # THE NUCLEAR OPTION
+            echo 1 | sudo tee /sys/devices/system/cpu/cpufreq/boost > /dev/null
+            swayosd-client --custom-message "laptop commited die (Boost ON)"
+    end
 end
 
 function diskard
