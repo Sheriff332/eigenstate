@@ -1519,3 +1519,15 @@ name = "github-cli"
 manager = "pacman"
 package_name = "github-cli"
 binary_name = "github-cli"
+
+[[profiles.packages]]
+name = "ryzenadj"
+manager = "pacman"
+package_name = "ryzenadj"
+binary_name = "ryzenadj"
+
+[[profiles.packages]]
+name = "bpftune-git"
+manager = "pacman"
+package_name = "bpftune-git"
+binary_name = "bpftune-git"
