@@ -61,6 +61,8 @@ prepend_rules = [
 
     # Videos (MPV)
     { mime = "video/*", use = "mpv" },
+    { mime = "audio/*", use = "mpv" },
+
 
     # Extract Files (Ouch)
     { mime = "application/zip", use = [ "extract", "reveal" ] },

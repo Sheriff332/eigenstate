@@ -47,6 +47,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("udiskie")
     hl.exec_cmd("gsr-ui")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
+    hl.exec_cmd("sudo ryzenadj --tctl-temp=84")
 end)
 
 -----------------

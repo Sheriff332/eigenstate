@@ -90,6 +90,9 @@
             "Alacritty": {
                "enabled": true
             },
+            "org.freesmlauncher.FreesmLauncher": {
+               "alias": "mc"
+            },
             "qalculate-gtk": {
                "alias": "calc"
             }
@@ -107,7 +110,10 @@
       },
       "clipboard": {
          "preferences": {
-            "monitoring": true
+            "monitoring": true,
+            "encryption": false,
+            "eraseOnStartup": true,
+            "ignorePasswords": true
          },
          "entrypoints": {
             "clear": {
