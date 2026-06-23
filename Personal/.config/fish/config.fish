@@ -44,16 +44,19 @@ function toohot!
     echo 0 | sudo tee /sys/devices/system/cpu/cpufreq/boost > /dev/null
 
     # 2. Get the active profile
-    # We use awk to grab the 3rd word from the line "Active profile: Balanced"
     set -l cur (asusctl profile get | awk '/Active profile:/ {print $3}')
 
     switch $cur
         case Performance
             asusctl profile set Balanced
-            swayosd-client --custom-message "Cooling Down: Balanced"
+            # Slap tight power limits + 84C target right into Balanced mode
+            sudo ryzenadj --fast-limit=25000 --slow-limit=22000 --stapm-limit=22000 --tctl-temp=84 > /dev/null
+            swayosd-client --custom-message "Cooling Down: Balanced (Eco Cap)"
         case Balanced
             asusctl profile set Quiet
-            swayosd-client --custom-message "Cooling Down: Quiet"
+            # Drop it down to an icy, silent ceiling
+            sudo ryzenadj --fast-limit=18000 --slow-limit=15000 --stapm-limit=15000 --tctl-temp=78 > /dev/null
+            swayosd-client --custom-message "Cooling Down: Quiet (Icy Mode)"
         case Quiet
             swayosd-client --custom-message "you're cooked lil bro (At Min)"
     end
@@ -66,15 +69,21 @@ function overclock
     switch $cur
         case Quiet
             asusctl profile set Balanced
+            # Restore mild, sustainable power maps
+            sudo ryzenadj --fast-limit=35000 --slow-limit=25000 --stapm-limit=25000 --tctl-temp=84 > /dev/null
             swayosd-client --custom-message "Profile: Balanced"
         case Balanced
             # Set hardware to Performance but keep software Boost OFF
             asusctl profile set Performance
             echo 0 | sudo tee /sys/devices/system/cpu/cpufreq/boost > /dev/null
-            swayosd-client --custom-message "Performance: Boost OFF (Safe Speed)"
+            # Lock the temp ceiling to 84C right here so it can't cross 90s under load
+            sudo ryzenadj --fast-limit=35000 --slow-limit=30000 --stapm-limit=30000 --tctl-temp=84 > /dev/null
+            swayosd-client --custom-message "Performance: Boost OFF (84°C Cap)"
         case Performance
             # THE NUCLEAR OPTION
             echo 1 | sudo tee /sys/devices/system/cpu/cpufreq/boost > /dev/null
+            # Restore stock limits so the CPU can scream if it needs to
+            sudo ryzenadj --fast-limit=65000 --slow-limit=35000 --stapm-limit=35000 --tctl-temp=95 > /dev/null
             swayosd-client --custom-message "laptop commited die (Boost ON)"
     end
 end

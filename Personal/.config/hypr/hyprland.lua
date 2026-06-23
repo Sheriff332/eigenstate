@@ -47,6 +47,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("udiskie")
     hl.exec_cmd("gsr-ui")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
+    hl.exec_cmd("sudo ryzenadj --tctl-temp=84")
 end)
 
 -----------------
@@ -60,8 +61,8 @@ hl.config({
         border_size = 2,
 
         -- Keys with dots in Lua must be wrapped in brackets
-        ["col.active_border"] = { colors = { "rgba(ffebecff)", "rgba(ffebecff)" }, angle = 45 },
-        ["col.inactive_border"] = "rgba(4f4445aa)",
+        ["col.active_border"] = { colors = { "rgba(ffebedff)", "rgba(ffebedff)" }, angle = 45 },
+        ["col.inactive_border"] = "rgba(4f4446aa)",
         resize_on_border = false,
         allow_tearing = false,
         layout = "scrolling"
@@ -114,7 +115,8 @@ hl.config({
         kb_options = "",
         kb_rules = "",
         follow_mouse = 1,
-        sensitivity = 0,
+        sensitivity = 0.5,
+        accel_profile = "flat",
         touchpad = {
             natural_scroll = false
         }
