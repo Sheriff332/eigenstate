@@ -85,35 +85,35 @@ body {
     --colors: on;
 
     /* text colors - Linked to Material Surface colors */
-    --text-0: #191113;           /* text on colored elements */
+    --text-0: #191114;           /* text on colored elements */
     --text-1: #ffffff;       /* bright text */
     --text-2: #ffffff;
     --text-3: #ffffff; /* normal text */
-    --text-4: #ffebed;          /* muted text */
-    --text-5: #d2bec0;
+    --text-4: #ffebf1;          /* muted text */
+    --text-5: #d0bec4;
 
     /* background and dark colors */
-    --bg-1: #4f4446;
-    --bg-2: #43393a;
-    --bg-3: #382e2f;
-    --bg-4: #191113;           /* main background color */
+    --bg-1: #4e4448;
+    --bg-2: #42393c;
+    --bg-3: #372e31;
+    --bg-4: #191114;           /* main background color */
     --hover: #ffffff1a;     /* 10% opacity */
     --active: #ffffff33;    /* 20% opacity */
     --active-2: #ffffff4d;
     --message-hover: #ffffff0d;
 
     /* accent colors - Linked to Primary Material Color */
-    --accent-1: #ffebed;
-    --accent-2: #ffebed;
-    --accent-3: #ffebed;
-    --accent-4: #ffabbc;
+    --accent-1: #ffebf1;
+    --accent-2: #ffebf1;
+    --accent-3: #ffebf1;
+    --accent-4: #f9accf;
     --accent-5: #000000;
-    --accent-new: #ffedde;
+    --accent-new: #ffece3;
 
-    --mention: linear-gradient(to right, #ffebed20 40%, transparent);
-    --mention-hover: linear-gradient(to right, #ffebed30 40%, transparent);
-    --reply: linear-gradient(to right, #ffebed20 40%, transparent);
-    --reply-hover: linear-gradient(to right, #ffebed30 40%, transparent);
+    --mention: linear-gradient(to right, #ffebf120 40%, transparent);
+    --mention-hover: linear-gradient(to right, #ffebf130 40%, transparent);
+    --reply: linear-gradient(to right, #ffebf120 40%, transparent);
+    --reply-hover: linear-gradient(to right, #ffebf130 40%, transparent);
 
     /* status indicator colors */
     --online: oklch(70% 0.12 170); /* change to #40a258 for default */
@@ -123,10 +123,10 @@ body {
     --offline: oklch(60% 0 0); /* change to  for default offline color */
 
     /* border colors */
-    --border-light: #d2bec0;
-    --border: #ffebed;
-    --border-hover: #ffebed;
-    --button-border: #ffebed33;
+    --border-light: #d0bec4;
+    --border: #ffebf1;
+    --border-hover: #ffebf1;
+    --button-border: #ffebf133;
 
     /* base colors - Pulling from different parts of the generated palette */
     --red-1: #ffaea4;
@@ -135,27 +135,27 @@ body {
     --red-4: #000000;
     --red-5: #000000;
 
-    --green-1: #ffabbc;
-    --green-2: #ffebed;
-    --green-3: #ffebed;
+    --green-1: #f9accf;
+    --green-2: #ffebf1;
+    --green-3: #ffebf1;
     --green-4: #000000;
     --green-5: #000000;
 
-    --blue-1: #e0b9bf;
-    --blue-2: #ffebed;
-    --blue-3: #ffebed;
+    --blue-1: #dcb9c7;
+    --blue-2: #ffebf1;
+    --blue-3: #ffebf1;
     --blue-4: #000000;
     --blue-5: #000000;
 
-    --yellow-1: #e8ba8d;
-    --yellow-2: #ffedde;
-    --yellow-3: #ffedde;
+    --yellow-1: #eeb795;
+    --yellow-2: #ffece3;
+    --yellow-3: #ffece3;
     --yellow-4: #000000;
     --yellow-5: #000000;
 
-    --purple-1: #ffd9df;
-    --purple-2: #ffb1c1;
-    --purple-3: #2c000e;
+    --purple-1: #ffd8e7;
+    --purple-2: #feb0d3;
+    --purple-3: #2a0019;
     --purple-4: #000000;
-    --purple-5: #ffebed;
+    --purple-5: #ffebf1;
 }

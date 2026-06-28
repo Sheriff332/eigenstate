@@ -42,7 +42,6 @@ hl.monitor({
 -------------------
 hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon &")
-    hl.exec_cmd("swayosd-server -s ~/.config/swayosd/style.css")
     hl.exec_cmd("xhost +SI:localuser:root") --This for sudo gui stuff, dont remove plz
     hl.exec_cmd("udiskie")
     hl.exec_cmd("gsr-ui")

@@ -42,7 +42,6 @@ hl.monitor({
 -------------------
 hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon &")
-    hl.exec_cmd("swayosd-server -s ~/.config/swayosd/style.css")
     hl.exec_cmd("xhost +SI:localuser:root") --This for sudo gui stuff, dont remove plz
     hl.exec_cmd("udiskie")
     hl.exec_cmd("gsr-ui")
@@ -61,8 +60,8 @@ hl.config({
         border_size = 2,
 
         -- Keys with dots in Lua must be wrapped in brackets
-        ["col.active_border"] = { colors = { "rgba(ffebedff)", "rgba(ffebedff)" }, angle = 45 },
-        ["col.inactive_border"] = "rgba(4f4446aa)",
+        ["col.active_border"] = { colors = { "rgba(ffebf1ff)", "rgba(ffebf1ff)" }, angle = 45 },
+        ["col.inactive_border"] = "rgba(4e4448aa)",
         resize_on_border = false,
         allow_tearing = false,
         layout = "scrolling"

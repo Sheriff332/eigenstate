@@ -1,0 +1,15 @@
+[Unit]
+Description=SwayOSD Display Server
+Documentation=https://github.com/ErikReider/SwayOSD
+BindsTo=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStartPre=-/usr/bin/pkill -f swayosd-server
+ExecStart=/usr/bin/swayosd-server
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target
