@@ -98,6 +98,12 @@ function diskard
     end
 end
 
+# Mount Windows drive with user permissions & bypass sudden dirty locks
+alias mntwin="sudo mkdir -p ~/Network/Windows && sudo mount -t ntfs3 -o uid=(id -u),gid=(id -g),force /dev/nvme0n1p3 ~/Network/Windows"
+
+# Unmount Windows drive safely
+alias unmntwin="sudo umount ~/Network/Windows && rmdir ~/Network/Windows"
+
 
 starship init fish | source
 
