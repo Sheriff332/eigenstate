@@ -44,7 +44,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon &")
     hl.exec_cmd("xhost +SI:localuser:root") --This for sudo gui stuff, dont remove plz
     hl.exec_cmd("udiskie")
-    hl.exec_cmd("gsr-ui")
+    hl.exec_cmd("prime-run gsr-ui")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
     hl.exec_cmd("sudo ryzenadj --tctl-temp=84")
 end)
@@ -114,7 +114,7 @@ hl.config({
         kb_options = "",
         kb_rules = "",
         follow_mouse = 1,
-        sensitivity = 0.5,
+        sensitivity = 1.0,
         accel_profile = "flat",
         touchpad = {
             natural_scroll = false
@@ -275,10 +275,10 @@ hl.bind(mainMod .. " + B", function()
     hl.dispatch(hl.dsp.workspace.toggle_special("browser"))
 end)
 
--- --- Games (Steam) ---
+-- --- Games (Heroic) ---
 hl.bind(mainMod .. " + G", function()
-    if not is_open("steam") then
-        hl.dispatch(hl.dsp.exec_cmd("steam", {
+    if not is_open("heroic") then
+        hl.dispatch(hl.dsp.exec_cmd("heroic", {
             workspace = "special:games"
         }))
     end

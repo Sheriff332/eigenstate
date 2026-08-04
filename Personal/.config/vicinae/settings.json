@@ -25,6 +25,7 @@
       }
    },
    "favorites": [
+      "@bl4zee1g/store.vicinae.bitwarden:browse-vault",
       "@jomifepe/store.raycast.bitwarden:search",
       "@jomifepe/store.raycast.bitwarden:create-login",
       "@jomifepe/store.raycast.bitwarden:generate-password-quick",
@@ -36,37 +37,6 @@
    "providers": {
       "@KevinBatdorf/store.raycast.steam": {
          "enabled": false
-      },
-      "@jomifepe/store.raycast.bitwarden": {
-         "preferences": {
-            "fetchFavicons": true,
-            "repromptIgnoreDuration": "-1",
-            "serverUrl": "https://vault.bitwarden.eu",
-            "shouldCacheVaultItems": true,
-            "syncOnLaunch": true,
-            "windowActionOnCopy": "keepOpen",
-            "cliPath": "/usr/sbin/bw"
-         },
-         "entrypoints": {
-            "create-folder": {
-               "enabled": false
-            },
-            "create-send": {
-               "enabled": false
-            },
-            "lock-vault": {
-               "enabled": false
-            },
-            "logout-vault": {
-               "enabled": false
-            },
-            "receive-send": {
-               "enabled": false
-            },
-            "search-sends": {
-               "enabled": false
-            }
-         }
       },
       "@rithvikvibhu/store.vicinae.arch-packages": {
          "enabled": false
