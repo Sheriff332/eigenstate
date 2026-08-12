@@ -291,8 +291,8 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:pad
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.layout("focus l"))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.layout("focus r"))
-hl.bind("mouse:276", hl.dsp.layout("focus l"))
-hl.bind("mouse:275", hl.dsp.layout("focus r"))
+hl.bind("mouse:276", hl.dsp.layout("focus r"))
+hl.bind("mouse:275", hl.dsp.layout("focus l"))
 
 hl.bind("SUPER + ALT + mouse_down", hl.dsp.layout("swapcol r"))
 hl.bind("SUPER + ALT + mouse_up", hl.dsp.layout("swapcol l"))
