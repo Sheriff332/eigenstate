@@ -28,6 +28,8 @@ x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 x-scheme-handler/webcal=vivaldi-stable.desktop
 x-scheme-handler/squidservers=squidservers.desktop
+application/pdf=vivaldi-stable.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 
 [Added Associations]
 text/plain=dev.zed.Zed.desktop;
@@ -46,3 +48,5 @@ video/x-matroska=mpv.desktop;
 video/webm=mpv.desktop;
 video/quicktime=mpv.desktop;
 video/x-msvideo=mpv.desktop;
+application/pdf=vivaldi-stable.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;

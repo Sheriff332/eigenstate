@@ -11,8 +11,8 @@ system_default = [
 zed = [
     { run = 'zeditor "%s"', orphan = true, for = "unix" }
 ]
-vivaldi = [
-    { run = 'vivaldi-stable "%s"', orphan = true, for = "unix" }
+vivaldi-stable = [
+    { run = 'xdg-open %s', orphan = true, for = "unix" }
 ]
 oculante = [
     { run = 'oculante "%s"', orphan = true, for = "unix" }
@@ -21,13 +21,30 @@ mpv = [
     { run = 'mpv "%s"', orphan = true, for = "unix" }
 ]
 
+# LibreOffice
+libreoffice-writer = [
+    { run = "libreoffice --writer %s", orphan = true, block = false, for = "unix" }
+]
+
+libreoffice-calc = [
+    { run = "libreoffice --calc %s", orphan = true, block = false, for = "unix" }
+]
+
+libreoffice-impress = [
+    { run = "libreoffice --impress %s", orphan = true, block = false, for = "unix" }
+]
+
+libreoffice-draw = [
+    { run = "libreoffice --draw %s", orphan = true, block = false, for = "unix" }
+]
+
 # Terminal Fallback
 micro = [
     { run = 'micro "%s"', block = true, for = "unix" }
 ]
 
 extract = [
-	{ run = 'ouch decompress "$@" --yes', desc = "Extract here" }
+	{ run = 'ouch decompress --yes %s', desc = "Extract here" }
 ]
 
 # ==============================================================================
@@ -37,20 +54,7 @@ extract = [
 prepend_rules = [
     # Text, Configs, and Programming Scripts (Drop straight into Zed)
     { mime = "text/*", use = "zed" },
-    { url = "*.json", use = "zed" },
-    { url = "*.toml", use = "zed" },
-    { url = "*.yaml", use = "zed" },
-    { url = "*.conf", use = "zed" },
-    { url = "*.lua", use = "zed" },
-    { url = "*.sh", use = "zed" },
-    { url = "*.md", use = "zed" },
-    { url = "*.css", use = "zed" },
-    { url = "*.rs", use = "zed" },
-    { url = "*.py", use = "zed" },
-    { url = "*.c", use = "zed" },
-    { url = "*.cpp", use = "zed" },
-    { url = "*.go", use = "zed" },
-    { url = "*.jsonc", use = "zed" },
+    { url = "*.{json,toml,yaml,conf,lua,sh,md,css,rs,py,c,go,cpp,jsonc,typ}", use = "zed" },
 
     # Web Files (Vivaldi Browser)
     { mime = "text/html", use = "vivaldi-stable" },
@@ -62,6 +66,11 @@ prepend_rules = [
     # Videos (MPV)
     { mime = "video/*", use = "mpv" },
     { mime = "audio/*", use = "mpv" },
+
+    { url = "*.{odt,ott,doc,docx,docm,rtf}", use = "libreoffice-writer" },
+    { url = "*.{ods,ots,xls,xlsx,xlsm,xlt,xltx,csv,tsv}", use = "libreoffice-calc" },
+    { url = "*.{odp,otp,ppt,pptx,pptm,pps,ppsx,pot,potx}", use = "libreoffice-impress" },
+    { url = "*.{odg,otg,svg,eps,emf,wmf,pdf}", use = "libreoffice-draw" },
 
 
     # Extract Files (Ouch)

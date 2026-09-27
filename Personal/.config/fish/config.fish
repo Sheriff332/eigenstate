@@ -49,11 +49,15 @@ function toohot!
     switch $cur
         case Performance
             asusctl profile set Balanced
+            asusctl profile set -a Balanced
+            asusctl profile set -b Balanced
             # Slap tight power limits + 84C target right into Balanced mode
             sudo ryzenadj --fast-limit=25000 --slow-limit=22000 --stapm-limit=22000 --tctl-temp=84 > /dev/null
             swayosd-client --custom-message "Cooling Down: Balanced (Eco Cap)"
         case Balanced
             asusctl profile set Quiet
+            asusctl profile set -a Quiet
+            asusctl profile set -b Quiet
             # Drop it down to an icy, silent ceiling
             sudo ryzenadj --fast-limit=18000 --slow-limit=15000 --stapm-limit=15000 --tctl-temp=78 > /dev/null
             swayosd-client --custom-message "Cooling Down: Quiet (Icy Mode)"
@@ -69,12 +73,16 @@ function overclock
     switch $cur
         case Quiet
             asusctl profile set Balanced
+            asusctl profile set -a Balanced
+            asusctl profile set -b Balanced
             # Restore mild, sustainable power maps
             sudo ryzenadj --fast-limit=35000 --slow-limit=25000 --stapm-limit=25000 --tctl-temp=84 > /dev/null
             swayosd-client --custom-message "Profile: Balanced"
         case Balanced
             # Set hardware to Performance but keep software Boost OFF
             asusctl profile set Performance
+            asusctl profile set -a Performance
+            asusctl profile set -b Performance
             echo 0 | sudo tee /sys/devices/system/cpu/cpufreq/boost > /dev/null
             # Lock the temp ceiling to 84C right here so it can't cross 90s under load
             sudo ryzenadj --fast-limit=35000 --slow-limit=30000 --stapm-limit=30000 --tctl-temp=84 > /dev/null

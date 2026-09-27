@@ -60,8 +60,8 @@ hl.config({
         border_size = 2,
 
         -- Keys with dots in Lua must be wrapped in brackets
-        ["col.active_border"] = { colors = { "rgba(ffebecff)", "rgba(ffebecff)" }, angle = 45 },
-        ["col.inactive_border"] = "rgba(4f4445aa)",
+        ["col.active_border"] = { colors = { "rgba(e4f1ffff)", "rgba(e4f1ffff)" }, angle = 45 },
+        ["col.inactive_border"] = "rgba(43474baa)",
         resize_on_border = false,
         allow_tearing = false,
         layout = "scrolling"
