@@ -47,6 +47,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("prime-run gsr-ui")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
     hl.exec_cmd("sudo ryzenadj --tctl-temp=84")
+    hl.exec_cmd("pypr")
 end)
 
 -----------------
@@ -192,7 +193,14 @@ hl.config({
 ---------------------
 -- Base binds (Uses hl.bind and dispatches actions internally)
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + Q", function()
+    local win = hl.get_active_window()
+    if win and win.class == "steam" then
+        hl.dispatch(hl.dsp.exec_cmd("steam -shutdown"))
+    else
+        hl.dispatch(hl.dsp.window.close())
+    end
+end)
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 
 -- Move focus across the horizontal ribbon
@@ -245,7 +253,15 @@ hl.bind(mainMod .. " + Space", function()
     hl.dispatch(hl.dsp.workspace.toggle_special("dash"))
 end)
 
--- --- Files (Yazi) ---
+-- -- --- Files (Yazi) ---
+hl.window_rule({
+    match = { class = "file_chooser" },
+    float = true,
+    center = true,
+    size = { 800, 500 },
+    dim_around = true,
+})
+
 hl.bind(mainMod .. " + E", function()
     if not is_open("scratch-yazi") then
         hl.dispatch(hl.dsp.exec_cmd("kitty --app-id scratch-yazi yazi", {
@@ -275,13 +291,15 @@ hl.bind(mainMod .. " + B", function()
     hl.dispatch(hl.dsp.workspace.toggle_special("browser"))
 end)
 
--- --- Games (Heroic) ---
+
+-- --- Games (Lutris) ---
 hl.bind(mainMod .. " + G", function()
-    if not is_open("heroic") then
-        hl.dispatch(hl.dsp.exec_cmd("heroic", {
+    if not is_open("net.lutris.Lutris") then
+        hl.dispatch(hl.dsp.exec_cmd("lutris", {
             workspace = "special:games"
         }))
     end
+
     hl.dispatch(hl.dsp.workspace.toggle_special("games"))
 end)
 
@@ -375,7 +393,7 @@ end)
 -- Fn10: Camera LED (Code 212)
 hl.bind("XF86WebCam", hl.dsp.exec_cmd([[notify-send  "Use physical shutter"]]))
 
--- GAMEMODE(WIP)
+-- GAMEMODE
 
 local game_mode = 0 -- 0 = normal (60Hz + effects), 1 = game (144Hz + minimal effects)
 

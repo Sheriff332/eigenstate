@@ -11,3 +11,8 @@ run = "plugin autosession --save-and-quit"
 on = "<C-y>"
 run = ["plugin wl-clipboard"]
 desc = "Copy to clipboard"
+
+[[mgr.prepend_keymap]]
+on = [ "<C-w>" ]
+run = "close"
+desc = "Close current tab"

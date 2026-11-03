@@ -32,6 +32,7 @@ application/pdf=vivaldi-stable.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 
 [Added Associations]
+x-scheme-handler/file=yazi.desktop;
 text/plain=dev.zed.Zed.desktop;
 text/x-csrc=micro.desktop;dev.zed.Zed.desktop;
 text/x-python=micro.desktop;dev.zed.Zed.desktop;
@@ -42,7 +43,7 @@ image/png=helium.desktop;oculante.desktop;
 image/gif=helium.desktop;oculante.desktop;
 image/bmp=helium.desktop;oculante.desktop;
 image/webp=helium.desktop;oculante.desktop;
-image/svg+xml=helium.desktop;oculante.desktop;
+image/svg+xml=dev.zed.Zed.desktop;vivaldi-stable.desktop;helium.desktop;oculante.desktop;
 video/mp4=mpv.desktop;
 video/x-matroska=mpv.desktop;
 video/webm=mpv.desktop;
