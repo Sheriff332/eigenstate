@@ -61,8 +61,8 @@ hl.config({
         border_size = 2,
 
         -- Keys with dots in Lua must be wrapped in brackets
-        ["col.active_border"] = { colors = { "rgba(f4f59cff)", "rgba(f4f2ccff)" }, angle = 45 },
-        ["col.inactive_border"] = "rgba(48473eaa)",
+        ["col.active_border"] = { colors = { "rgba(e4f1ffff)", "rgba(e4f1ffff)" }, angle = 45 },
+        ["col.inactive_border"] = "rgba(43474baa)",
         resize_on_border = false,
         allow_tearing = false,
         layout = "scrolling"
@@ -262,7 +262,6 @@ hl.window_rule({
     dim_around = true,
 })
 
--- Your original, simple, working toggle
 hl.bind(mainMod .. " + E", function()
     if not is_open("scratch-yazi") then
         hl.dispatch(hl.dsp.exec_cmd("kitty --app-id scratch-yazi yazi", {
