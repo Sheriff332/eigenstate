@@ -61,8 +61,8 @@ hl.config({
         border_size = 2,
 
         -- Keys with dots in Lua must be wrapped in brackets
-        ["col.active_border"] = { colors = { "rgba(e4f1ffff)", "rgba(e4f1ffff)" }, angle = 45 },
-        ["col.inactive_border"] = "rgba(43474baa)",
+        ["col.active_border"] = { colors = { "rgba(ffebedff)", "rgba(ffebedff)" }, angle = 45 },
+        ["col.inactive_border"] = "rgba(4f4446aa)",
         resize_on_border = false,
         allow_tearing = false,
         layout = "scrolling"
@@ -303,6 +303,16 @@ hl.bind(mainMod .. " + G", function()
     hl.dispatch(hl.dsp.workspace.toggle_special("games"))
 end)
 
+-- --- Music ---
+hl.bind(mainMod .. " + M", function()
+    if not is_open("sonora") then
+        hl.dispatch(hl.dsp.exec_cmd("sonora", {
+            workspace = "special:music"
+        }))
+    end
+    hl.dispatch(hl.dsp.workspace.toggle_special("music"))
+end)
+
 -- --- Pad (The "Normal" Way) ---
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("pad"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:pad" }))
@@ -424,6 +434,9 @@ hl.bind(mainMod .. " + SHIFT + G", function()
     end
 end)
 
+-- Network Rescan
+hl.bind("ALT + n", hl.dsp.exec_cmd("iwctl station wlan0 scan"))
+
 
 
 --------------------------------
@@ -490,12 +503,11 @@ hl.window_rule({
     workspace = "1"
 })
 
--- Oculante floating, centered, pinned
-hl.window_rule({
-    match = {
-        class = "oculante"
+-- Window Wobble
+hl.config({
+    decoration = {
+        wobble = {
+            enabled = true,
+        },
     },
-    float = true,
-    center = true,
-    pin = true
 })

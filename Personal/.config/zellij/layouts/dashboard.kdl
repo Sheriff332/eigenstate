@@ -8,8 +8,8 @@ layout {
                 args "--battery"
             }
             // ytm-player takes the rest of the left column
-            pane name="Music" size="60%" {
-                command "ytm"
+            pane name="Notifs" size="60%" {
+                command "histui"
             }
         }
 
@@ -36,7 +36,6 @@ layout {
 
             // Bottom Row: Management Stack
             pane name="Management" size="50%" stacked=true {
-                pane name="Notifs" { command "histui"; }
                 pane name="Net" { command "impala"; }
                 pane name="Bluetooth" { command "bluetuith"; }
             }
