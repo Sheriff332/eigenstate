@@ -13,6 +13,7 @@
    "close_on_focus_loss": false,
    "pop_to_root_on_close": true,
    "activate_on_single_click": true,
+   "escape_key_behavior": "close_window",
    "theme": {
       "dark": {
          "name": "matugen"
@@ -38,6 +39,19 @@
       "@KevinBatdorf/store.raycast.steam": {
          "enabled": false
       },
+      "@josephschmitt/store.raycast.gif-search": {
+         "preferences": {
+            "gridItemSize": "medium",
+            "gridTrendingItemSize": "medium",
+            "maxResults": "20",
+            "defaultAction": "copyFile",
+            "downloadPath": null,
+            "hideFilename": false,
+            "giphyLocale": "en",
+            "tenorLocale": "en",
+            "klipyLocale": "en"
+         }
+      },
       "@rithvikvibhu/store.vicinae.arch-packages": {
          "enabled": false
       },
@@ -52,7 +66,26 @@
             "transitionDuration": "3",
             "transitionFPS": "60",
             "transitionStep": "90",
-            "transitionType": "random"
+            "transitionType": "random",
+            "leftMonitor": null,
+            "rightMonitor": null,
+            "postCommand": null
+         }
+      },
+      "ai": {
+         "entrypoints": {
+            "chat": {
+               "enabled": false
+            },
+            "conversations": {
+               "enabled": false
+            },
+            "last-chat": {
+               "enabled": false
+            },
+            "quick": {
+               "enabled": false
+            }
          }
       },
       "applications": {
@@ -70,12 +103,26 @@
       },
       "browser-extension": {
          "entrypoints": {
+            "browse-bookmarks": {
+               "enabled": false
+            },
+            "browse-history": {
+               "enabled": false
+            },
             "browse-tabs": {
+               "enabled": false
+            },
+            "clear-history": {
                "enabled": false
             },
             "shortcut-active-tab": {
                "enabled": false
             }
+         }
+      },
+      "calculator": {
+         "preferences": {
+            "backend": "qalculate"
          }
       },
       "clipboard": {
@@ -146,6 +193,28 @@
       "developer": {
          "enabled": false
       },
+      "dictation": {
+         "entrypoints": {
+            "add-vocab": {
+               "enabled": false
+            },
+            "create-style": {
+               "enabled": false
+            },
+            "dictate": {
+               "enabled": false
+            },
+            "history": {
+               "enabled": false
+            },
+            "styles": {
+               "enabled": false
+            },
+            "vocab": {
+               "enabled": false
+            }
+         }
+      },
       "files": {
          "preferences": {
             "autoIndexing": true,
@@ -170,6 +239,46 @@
       "manage-shortcuts": {
          "enabled": false
       },
+      "media": {
+         "entrypoints": {
+            "next-track": {
+               "enabled": false
+            },
+            "now-playing": {
+               "enabled": false
+            },
+            "play-pause": {
+               "enabled": false
+            },
+            "previous-track": {
+               "enabled": false
+            },
+            "toggle-mute": {
+               "enabled": false
+            },
+            "volume-0": {
+               "enabled": false
+            },
+            "volume-100": {
+               "enabled": false
+            },
+            "volume-25": {
+               "enabled": false
+            },
+            "volume-50": {
+               "enabled": false
+            },
+            "volume-75": {
+               "enabled": false
+            },
+            "volume-down": {
+               "enabled": false
+            },
+            "volume-up": {
+               "enabled": false
+            }
+         }
+      },
       "power": {
          "enabled": false
       },
@@ -186,6 +295,15 @@
       "shortcuts": {
          "enabled": false
       },
+      "snippets": {
+         "preferences": {
+            "enabled": true,
+            "undo": true,
+            "layout": "",
+            "prePasteDelay": "0",
+            "keyDelay": "2"
+         }
+      },
       "system": {
          "enabled": false,
          "entrypoints": {
@@ -197,6 +315,29 @@
             },
             "run": {
                "alias": "$"
+            }
+         }
+      },
+      "theme": {
+         "entrypoints": {
+            "set": {
+               "enabled": false
+            }
+         }
+      },
+      "wm": {
+         "entrypoints": {
+            "switch-windows": {
+               "enabled": true
+            },
+            "switch-workspaces": {
+               "enabled": false
+            },
+            "toggle-floating": {
+               "enabled": false
+            },
+            "toggle-fullscreen": {
+               "enabled": false
             }
          }
       }

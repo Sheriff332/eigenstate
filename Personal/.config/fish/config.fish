@@ -112,6 +112,7 @@ alias mntwin="sudo mkdir -p ~/Network/Windows && sudo mount -t ntfs3 -o uid=(id 
 # Unmount Windows drive safely
 alias unmntwin="sudo umount ~/Network/Windows && rmdir ~/Network/Windows"
 
+alias dnd="histui dnd toggle"
 
 starship init fish | source
 

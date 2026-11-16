@@ -35,7 +35,7 @@
     },
     {
       "type": "memory",
-      "key": "└ └󰍛 Memory",
+      "key": "│ ├󰍛 Memory",
       "keyColor": "green",
     },
     {
@@ -81,7 +81,7 @@
     },
     {
       "type": "terminal",
-      "key": "└ └ terminal",
+      "key": "│ ├ terminal",
       "keyColor": "yellow",
     },
     {
@@ -113,7 +113,7 @@
     },
     {
       "type": "wmtheme",
-      "key": "└ └󰉼 Theme",
+      "key": "│ ├󰉼 Theme",
       "keyColor": "blue",
     },
     {

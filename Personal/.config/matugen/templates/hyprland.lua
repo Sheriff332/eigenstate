@@ -47,7 +47,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("prime-run gsr-ui")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
     hl.exec_cmd("sudo ryzenadj --tctl-temp=84")
-    hl.exec_cmd("pypr")
+    hl.exec_cmd("histui prune --keep 0")
 end)
 
 -----------------
@@ -322,10 +322,8 @@ hl.bind(mainMod .. " + mouse_up", hl.dsp.layout("focus r"))
 hl.bind("mouse:276", hl.dsp.layout("focus r"))
 hl.bind("mouse:275", hl.dsp.layout("focus l"))
 
-hl.bind("SUPER + ALT + mouse_down", hl.dsp.layout("swapcol r"))
-hl.bind("SUPER + ALT + mouse_up", hl.dsp.layout("swapcol l"))
-hl.bind(mainMod .. " + mouse:276", hl.dsp.layout("swapcol l"))
-hl.bind(mainMod .. " + mouse:275", hl.dsp.layout("swapcol r"))
+hl.bind(mainMod .. " + mouse:276", hl.dsp.layout("swapcol r"))
+hl.bind(mainMod .. " + mouse:275", hl.dsp.layout("swapcol l"))
 
 -- Mouse actions
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -417,7 +415,7 @@ hl.bind(mainMod .. " + SHIFT + G", function()
     end
     if game_mode == 1 then
         hl.notification.create({
-            text = "Game mode ON — 1920x1080@144; effects disabled",
+            text = "Game mode ON — 1920x1080@144",
             duration = 10000,
             color =
             "rgb(1b29a3)",
@@ -425,7 +423,7 @@ hl.bind(mainMod .. " + SHIFT + G", function()
         })
     else
         hl.notification.create({
-            text = "Game mode OFF — 1920x1080@60; effects enabled",
+            text = "Game mode OFF — 1920x1080@60",
             duration = 10000,
             color =
             "rgb(1b29a3)",
@@ -496,12 +494,12 @@ hl.layer_rule({
 -- })
 
 -- Zed always opens on workspace 1
-hl.window_rule({
-    match = {
-        class = "dev.zed.Zed"
-    },
-    workspace = "1"
-})
+-- hl.window_rule({
+--     match = {
+--         class = "dev.zed.Zed"
+--     },
+--     workspace = "1"
+-- })
 
 -- Window Wobble
 hl.config({

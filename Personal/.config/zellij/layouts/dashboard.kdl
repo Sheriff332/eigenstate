@@ -3,12 +3,12 @@ layout {
         // COLUMN 1: THE MAIN STAGE (Left - 40%)
         pane size="40%" split_direction="horizontal" {
             // btm --battery restricted to a small height at the top
-            pane name="System" size="40%" {
+            pane name="System" size="60%" {
                 command "btm"
                 args "--battery"
             }
             // ytm-player takes the rest of the left column
-            pane name="Notifs" size="60%" {
+            pane name="Notifs" size="40%" {
                 command "histui"
             }
         }
@@ -20,7 +20,7 @@ layout {
             pane split_direction="vertical" size="25%" {
                 pane name="Clock" size="20%" {
                     command "clock-rs";
-                    args "--fmt" "%D: %A" "-s";
+                    args "--fmt" "%d %b,%Y: %A" "-s";
                 }
                 pane name="Visualizer" { command "cava"; }
             }
