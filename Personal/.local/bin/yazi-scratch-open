@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+TARGET="${1:-$HOME}"
+TARGET="${TARGET#file://}"
+
+kitty --app-id scratch-yazi yazi "$TARGET" &
+hyprctl dispatch 'hl.dsp.workspace.toggle_special("files")'
