@@ -93,3 +93,7 @@ post_hook = ""
 input_path = '~/.config/matugen/templates/modernz.conf'
 output_path = '~/.config/mpv/script-opts/modernz.conf'
 post_hook = ""
+
+[templates.metrolist]
+input_path = "~/.config/matugen/templates/metrolist.properties"
+output_path = "~/.config/metrolist/matugen.properties"

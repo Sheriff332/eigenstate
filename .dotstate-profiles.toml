@@ -1,7 +1,7 @@
 version = 2
 
 [common]
-synced_files = []
+synced_files = [".config/metrolist/matugen.properties"]
 
 [[profiles]]
 name = "Personal"
@@ -16,6 +16,7 @@ synced_files = [
     ".config/hypr",
     ".config/kitty",
     ".config/matugen",
+    ".config/metrolist/settings.properties",
     ".config/mimeapps.list",
     ".config/mpv",
     ".config/nwg-look",
